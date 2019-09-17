@@ -4,3 +4,8 @@
 // - Write a function called `appendS` that gets a string as an input
 //   and appends an 's' character to its end
 // - Print the result of `appendS(am)` to the console
+let am = 'dog';
+function appendS(str){
+    return str+'s';
+}
+console.log(appendS(am));
