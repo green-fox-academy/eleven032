@@ -1,0 +1,18 @@
+{
+  "cases": [
+    {
+      "ex_input" : [],
+      "ex_output" : [
+        "^+--------------------+---------------+----------+",
+        "^| Ingredient         | Needs cooling | In stock |",
+        "^+--------------------+---------------+----------+",
+        "^| vodka              | Yes           | 1        |",
+        "^| coffee_liqueur     | Yes           | -        |",
+        "^| fresh_cream        | Yes           | 1        |",
+        "^| captain_morgan_rum | Yes           | 2        |",
+        "^| mint_leaves        | No            | -        |",
+        "^+--------------------+---------------+----------+"
+      ]
+    }
+  ]
+}
