@@ -19,10 +19,12 @@ let bar = '';
 let middle = '';
 let index = 0;
 let index2 = 0;
+
 while(index<lineCount){
     bar+='%';
     index++;
 }
+
 while(index2<lineCount){
     if(index2===0||index2===lineCount-2){
         middle+='%';
