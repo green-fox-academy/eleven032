@@ -11,5 +11,7 @@
 //      - Diablo
 
 var todoText = " - Buy milk\n";
-
+todoText = "My todo:\n" + todoText;
+todoText = todoText + " - Download games";
+todoText = todoText + "\n     - Diablo";
 console.log(todoText);
