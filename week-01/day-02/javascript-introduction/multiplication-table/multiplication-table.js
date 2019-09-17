@@ -18,3 +18,8 @@ const number = 15;
 // 8 * 15 = 120
 // 9 * 15 = 135
 // 10 * 15 = 150
+let i = 1;
+while (i <= 10) {
+    console.log(i + ' * ' + number + ' = ' + i * number);
+    i++;
+}

@@ -3,6 +3,9 @@
 const a = 24;
 let out = 0;
 // if a is even increment out by one
+if(a%2===0){
+    out++;
+}
 
 console.log(out);
 
@@ -11,6 +14,13 @@ let out2 = '';
 // if b is between 10 and 20 set out2 to 'Sweet!'
 // if less than 10 set out2 to 'More!',
 // if more than 20 set out2 to 'Less!'
+if(b>=10&&b<=20){
+    out2 = 'Sweet!'
+} else  if(b<10){
+    out2 = 'More!'
+} else {
+    out2 = 'Less!'
+}
 
 console.log(out2);
 
@@ -22,6 +32,12 @@ const isBonus = false;
 // if credits are smaller than 50,
 // and isBonus is false decrement c by 1
 // if isBonus is true c should remain the same
+if(credits>=50&&!isBonus){
+    c-=2
+} else if(credits<50&&!isBonus){
+    c-=1
+} else if (isBonus){
+}
 
 console.log(c);
 
@@ -34,5 +50,9 @@ let out3 = '';
 // if time is more than 200
 // set out3 to 'Time out'
 // otherwise set out3 to 'Run Forest Run!'
-
+if(d%4===0&&time<200){
+    out3 = 'Time out'
+} else {
+    out3 = 'Run Forest Run!'
+}
 console.log(out3);
