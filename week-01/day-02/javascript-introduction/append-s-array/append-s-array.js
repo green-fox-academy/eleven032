@@ -4,3 +4,6 @@
 //   with the following content: `['dog', 'cat', 'kitten']`
 // - Add all elements an `'s'` at the end
 // - try to use built in functions instead of loops
+let animals = ['dog', 'cat', 'kitten'];
+let newshit = animals.map(a=>a+='s');
+console.log(newshit);

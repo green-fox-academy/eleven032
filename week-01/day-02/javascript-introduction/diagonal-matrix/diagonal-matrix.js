@@ -12,3 +12,22 @@
 //
 // * size should depend on a variable
 // ** Relax, a matrix is just like an array
+let a = 4;
+let i = 0;
+let res = [];
+while(i<a){
+    let tmp = [];
+    let j = 0;
+    while(j<a){
+        if(j===a-i-1){
+            tmp.push(1);
+        } else {
+            tmp.push(0);
+        }
+        
+        j++;
+    }
+    res.push(tmp);
+    i++;
+}
+res.forEach(a=>console.log(a))
