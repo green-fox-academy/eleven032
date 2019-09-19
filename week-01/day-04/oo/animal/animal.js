@@ -15,7 +15,7 @@ class Animal {
         this.thirst+=1;
     }
 }
-
+module.exports = Animal;
 const a = new Animal();
 a.eat();
 

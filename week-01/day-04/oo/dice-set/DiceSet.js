@@ -42,21 +42,31 @@ class DiceSet {
 // Your task is to roll the dice until all of the dice are 6
 
 const diceSet = new DiceSet();
+// console.log(diceSet.roll());
+// console.log(diceSet.getCurrent());
+
+// console.log('------------------');
+
+// diceSet.reroll();
+// console.log(diceSet.getCurrent());
+
+// console.log('------------------');
+
+// console.log(diceSet.getCurrent(5));
+// diceSet.reroll();
+// console.log(diceSet.getCurrent());
+
+// console.log('------------------');
+
+// diceSet.reroll(4);
+// console.log(diceSet.getCurrent());
 console.log(diceSet.roll());
-console.log(diceSet.getCurrent());
-
-console.log('------------------');
-
-diceSet.reroll();
-console.log(diceSet.getCurrent());
-
-console.log('------------------');
-
-console.log(diceSet.getCurrent(5));
-diceSet.reroll();
-console.log(diceSet.getCurrent());
-
-console.log('------------------');
-
-diceSet.reroll(4);
+function diceBot(mydice) {
+  for (let i = 0; i < mydice.numOfDices; i++) {
+    while(mydice.getCurrent(i)!==6){
+      mydice.reroll(i);
+    }
+  }
+}
+diceBot(diceSet);
 console.log(diceSet.getCurrent());

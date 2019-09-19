@@ -1,9 +1,9 @@
 'use strict';
 
-const Thing = require('./thing');
-const Fleet = require('./fleet');
+// const Thing = require('./thing');
+// const Fleet = require('./fleet');
+const FleetOfThings = require('./fleetOfThing');
 
-const fleet = new Fleet();
 
 // -  You have the `Thing` class
 // -  You have the `Fleet` class
@@ -19,8 +19,8 @@ const fleet = new Fleet();
 // 4. [x] Eat lunch
 
 // Hint: You have to create a `print()` method as well
-class FleetOfThings {
-    main(){
-        
-    }
-}
+let a = new FleetOfThings();
+a.add('a');
+a.add('b');
+a.setStatus('a');
+a.print();
