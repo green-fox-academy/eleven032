@@ -16,6 +16,13 @@ const wildPokemon = new Pokemon('Oddish', 'leaf', 'water');
 
 console.log('I choose you, ');
 
+for (let i = 0; i < pokemonOfAsh.length; i++) {
+  if (pokemonOfAsh[i].effectiveAgainst === wildPokemon.type) {
+    console.log(pokemonOfAsh[i].name);
+    break;
+  }
+
+}
 function initializePokemon() {
   return [
     new Pokemon('Balbasaur', 'leaf', 'water'),

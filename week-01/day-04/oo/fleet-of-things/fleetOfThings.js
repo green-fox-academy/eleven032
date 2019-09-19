@@ -19,3 +19,8 @@ const fleet = new Fleet();
 // 4. [x] Eat lunch
 
 // Hint: You have to create a `print()` method as well
+class FleetOfThings {
+    main(){
+        
+    }
+}
