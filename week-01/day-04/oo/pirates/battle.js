@@ -11,7 +11,6 @@ class BattleApp {
             console.log("ship1 win");
             return 1;
         } else if (this.ship1.getAlive() < this.ship2.getAlive()) {
-
             console.log("ship2 win");
             return 2;
         } else {

@@ -15,8 +15,8 @@ ship3.fillShip();
 // console.log(ship2.status());
 // console.log(ship3.status());
 
-let b = new BattleApp(ship1,ship2);
-b.battle();
+// let b = new BattleApp(ship1,ship2);
+// b.battle();
 
 let war = new WarApp();
 war.fill();

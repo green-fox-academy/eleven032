@@ -13,6 +13,7 @@ class WarApp {
     }
 
     war(){
+        
         let res = this.a1.war(this.a2);
         if(res === 1){
             console.log("a1 win");
