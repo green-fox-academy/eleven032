@@ -100,9 +100,16 @@ class Carrier {
 
     fight(c) {
         if (c.hp === 0) {
-            console.log('It\'s a dead ship!');
+            console.log('It\'s a dead jim!');
         } else {
-            c.hp -= this.getTotalDMG();
+            if(c.hp - this.gettotalDMG()<=0){
+                c.hp = 0;
+                this.getTotalDMG();
+            } else {
+                c.hp -= this.getTotalDMG();
+            }
+            
+            
         }
     }
 
@@ -132,13 +139,18 @@ class Carrier {
 
 
     getStatus() {
-        let all = '';
-        for (let a of this.list) {
-            all+=a.getStatus();
-            all+='\n';
+        if (this.hp !== 0) {
+            let all = '';
+            for (let a of this.list) {
+                all += a.getStatus();
+                all += '\n';
+            }
+            return `HP: ${this.hp}, Aircraft count: ${this.list.length}, Ammo Storage: ${this.totalammo}, Total damage: ${this.gettotalDMG()} \n Aircrafts: \n ${all}`
+
+        } else {
+            return 'It\'s dead Jim :(';
         }
-        return `HP: ${this.hp}, Aircraft count: ${this.list.length}, Ammo Storage: ${this.totalammo}, Total damage: ${this.gettotalDMG()} \n Aircrafts: \n ${all}`
-        
+
     }
 }
 
@@ -152,18 +164,51 @@ let e = new F35();
 
 
 let a1 = new F16();
-let b1 = new F35();
+let b1 = new F16();
 let c1 = new F16();
-let d1 = new F35();
+let d1 = new F16();
 let e1 = new F35();
 
-let car = new Carrier(2300, 5000);
-car.add(a);
-car.add(b);
-car.add(c);
-car.add(d);
-car.add(e);
-console.log(car.getStatus());
+let car1 = new Carrier(2300, 5000);
+car1.add(a);
+car1.add(b);
+car1.add(c);
+car1.add(d);
+car1.add(e);
+console.log(car1.getStatus());
 
+console.log('------------------------------------------------------');
 
+let car2 = new Carrier(2000, 3000);
+car2.add(a1);
+car2.add(b1);
+car2.add(c1);
+car2.add(d1);
+car2.add(e1);
+console.log(car2.getStatus());
+console.log('------------------------------------------------------');
+console.log('------------------------------------------------------');
+car1.fight(car2);
+console.log(car2.getStatus());
+// console.log('------------------------------------------------------');
+// console.log('------------------------------------------------------');
+// car1.fight(car2);
+// console.log(car2.getStatus());
+// console.log('------------------------------------------------------');
+// console.log('------------------------------------------------------');
+// console.log('------------------------------------------------------');
+// console.log(car1.getStatus());
+// car1.fill();
+// console.log(car1.getStatus());
+// console.log('------------------------------------------------------');
+// console.log('------------------------------------------------------');
+// console.log('------------------------------------------------------');
+// car1.fight(car2);
+// car1.fight(car2);
+car1.fill();
+// console.log('after firsttttttttttttttttttttttttt fight');
+// console.log(car2.getStatus());
 
+car1.fight(car2);
+// console.log('after secccccccccccccccccccccccccccccccccccc fight');
+console.log(car2.getStatus());
