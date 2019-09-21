@@ -1,157 +1,177 @@
+/**
+ *
+ *
+ * @class Aircraft
+ */
 class Aircraft {
-    constructor(ammo = 0, damage, type) {
-        this.ammo = ammo;
-        this.damage = damage;
-        this.type = type;
-    }
 
-    fight() {
-        let dealt = this.damage * this.ammo;
-        this.ammo = 0;
-        return dealt;
-    }
+  /**
+   *Creates an instance of Aircraft.
+   * @param {number} [ammo=0]
+   * @param {*} damage
+   * @param {*} type
+   * @memberof Aircraft
+   */
+  constructor(ammo = 0, damage, type) {
+    this.ammo = ammo;
+    this.damage = damage;
+    this.type = type;
+    this.architecture = a; 
+  }
 
-    refill(num, max) {
-        if (num <= (max - this.ammo)) {
-            this.ammo += num;
-            return 0;
-        } else {
-            let res = num - (max - this.ammo);
-            this.ammo = max;
-            return res;
-        }
-    }
+  fight() {
+    let dealt = this.damage * this.ammo;
+    this.ammo = 0;
+    return dealt;
+  }
 
-    getType() {
-        return this.type;
+  refill(num, max) {
+    if (num <= (max - this.ammo)) {
+      this.ammo += num;
+      return 0;
+    } else {
+      let res = num - (max - this.ammo);
+      this.ammo = max;
+      return res;
     }
+  }
 
-    getStatus() {
-        return `Type ${this.type}, Ammo: ${this.ammo}, Base Damage: ${this.damage}, All Damage: ${this.damage * this.ammo}`
-    }
+  getType() {
+    return this.type;
+  }
 
-    isPriority() {
-        return this.type === 'F35' ? true : false;
-    }
+  getStatus() {
+    return `Type ${this.type}, Ammo: ${this.ammo}, Base Damage: ${this.damage}, All Damage: ${this.damage * this.ammo}`
+  }
+
+  isPriority() {
+    return this.type === 'F35' ? true : false;
+  }
 }
 
 class F16 extends Aircraft {
-    constructor() {
-        super(8, 30, 'F16');
-        this.max = 8;
-    }
+  constructor() {
+    super(8, 30, 'F16');
+    this.max = 8;
+  }
 
-    refill(num) {
-        return super.refill(num, this.max);
-    }
+  refill(num) {
+    return super.refill(num, this.max);
+  }
 }
 
+/**
+ *
+ *
+ * @class F35
+ * @extends {Aircraft}
+ */
 class F35 extends Aircraft {
-    constructor() {
-        super(12, 50, 'F35');
-        this.max = 12;
-    }
+  constructor() {
+    super(12, 50, 'F35');
+    this.max = 12;
+  }
 
-    refill(num) {
-        return super.refill(num, this.max);
-    }
+  refill(num) {
+    return super.refill(num, this.max);
+  }
 }
 
 
 class Carrier {
-    constructor(totalammo, hp) {
-        this.list = [];
-        this.totalammo = totalammo;
-        this.hp = hp;
-    }
+  constructor(totalammo, hp) {
+    this.list = [];
+    this.totalammo = totalammo;
+    this.hp = hp;
+  }
 
-    add(a) {
-        this.list.push(a);
-    }
+  add(a) {
+    this.list.push(a);
+  }
 
-    fill() {
-        if (this.totalammoneeded() > this.totalammo) {
-            for (let a of this.list) {
-                if (this.totalammo !== 0) {
-                    if (a.isPriority()) {
-                        this.totalammo = a.refill(this.totalammo);
-                    }
-                } else {
-                    console.log('Run out of the ammo!!!');
-                }
-            }
-
-            for (let a of this.list) {
-                if (this.totalammo !== 0) {
-                    if (a.getType() === 'F16') {
-                        this.totalammo = a.refill(this.totalammo);
-                    }
-                } else {
-                    console.log('Run out of the ammo!!!');
-                }
-            }
-
+  fill() {
+    if (this.totalammoneeded() > this.totalammo) {
+      for (let a of this.list) {
+        if (this.totalammo !== 0) {
+          if (a.isPriority()) {
+            this.totalammo = a.refill(this.totalammo);
+          }
         } else {
-            for (let a of this.list) {
-                this.totalammo = a.refill(this.totalammo);
-            }
+          console.log('Run out of the ammo!!!');
         }
-    }
+      }
 
-    fight(c) {
-        if (c.hp === 0) {
-            console.log('It\'s a dead jim!');
+      for (let a of this.list) {
+        if (this.totalammo !== 0) {
+          if (a.getType() === 'F16') {
+            this.totalammo = a.refill(this.totalammo);
+          }
         } else {
-            if(c.hp - this.gettotalDMG()<=0){
-                c.hp = 0;
-                this.getTotalDMG();
-            } else {
-                c.hp -= this.getTotalDMG();
-            }
-            
-            
+          console.log('Run out of the ammo!!!');
         }
+      }
+
+    } else {
+      for (let a of this.list) {
+        this.totalammo = a.refill(this.totalammo);
+      }
     }
+  }
 
-    getTotalDMG() {
-        let dmg = 0;
-        for (let a of this.list) {
-            dmg += a.fight();
-        }
-        return dmg;
-    }
+  fight(c) {
+    if (c.hp === 0) {
+      console.log('It\'s a dead jim!');
+    } else {
+      if (c.hp - this.gettotalDMG() <= 0) {
+        c.hp = 0;
+        this.getTotalDMG();
+      } else {
+        c.hp -= this.getTotalDMG();
+      }
 
-    totalammoneeded() {
-        let res = 0;
-        for (let a of this.list) {
-            res += (a.max - a.ammo);
-        }
-        return res;
-    }
-
-    gettotalDMG() {
-        let res = 0;
-        for (let a of this.list) {
-            res += (a.ammo * a.damage);
-        }
-        return res;
-    }
-
-
-    getStatus() {
-        if (this.hp !== 0) {
-            let all = '';
-            for (let a of this.list) {
-                all += a.getStatus();
-                all += '\n';
-            }
-            return `HP: ${this.hp}, Aircraft count: ${this.list.length}, Ammo Storage: ${this.totalammo}, Total damage: ${this.gettotalDMG()} \n Aircrafts: \n ${all}`
-
-        } else {
-            return 'It\'s dead Jim :(';
-        }
 
     }
+  }
+
+  getTotalDMG() {
+    let dmg = 0;
+    for (let a of this.list) {
+      dmg += a.fight();
+    }
+    return dmg;
+  }
+
+  totalammoneeded() {
+    let res = 0;
+    for (let a of this.list) {
+      res += (a.max - a.ammo);
+    }
+    return res;
+  }
+
+  gettotalDMG() {
+    let res = 0;
+    for (let a of this.list) {
+      res += (a.ammo * a.damage);
+    }
+    return res;
+  }
+
+
+  getStatus() {
+    if (this.hp !== 0) {
+      let all = '';
+      for (let a of this.list) {
+        all += a.getStatus();
+        all += '\n';
+      }
+      return `HP: ${this.hp}, Aircraft count: ${this.list.length}, Ammo Storage: ${this.totalammo}, Total damage: ${this.gettotalDMG()} \n Aircrafts: \n ${all}`
+
+    } else {
+      return 'It\'s dead Jim :(';
+    }
+
+  }
 }
 
 
