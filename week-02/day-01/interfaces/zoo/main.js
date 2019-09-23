@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var zoo_1 = require("./zoo");
+var reptile = new zoo_1.Reptile('Earvin', 'Crocodile', 4, 'female');
+var mammal = new zoo_1.Mammal('Honda', 'Koala', 10, 'male');
+var bird = new zoo_1.Bird('Mars', 'Parrot', 8, 'female');
+console.log('How do you breed?');
+reptile.print();
+mammal.print();
+bird.print();
