@@ -37,6 +37,7 @@ var Animal = /** @class */ (function () {
     };
     return Animal;
 }());
+exports.Animal = Animal;
 var Reptile = /** @class */ (function (_super) {
     __extends(Reptile, _super);
     function Reptile(nickName, name, age, gender) {
