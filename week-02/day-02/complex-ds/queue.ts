@@ -9,13 +9,13 @@ class ArrayQueue implements Queue{
         return this.list.length==0?true:false;
     }    
     peek(): string {
-        throw new Error("Method not implemented.");
+        return this.list[0];
     }
     add(value: string): void {
-        throw new Error("Method not implemented.");
+        this.list.push(value);
     }
     remove(): string {
-        throw new Error("Method not implemented.");
+        return this.list.shift();
     }
 
     
