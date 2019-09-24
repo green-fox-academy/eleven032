@@ -1,8 +1,8 @@
 import {Stack} from './ds';
 
 class ArrayStack implements Stack {
-    list:string[]=[];
-    constructor(list:string[]){
+    private list:string[]=[];
+    constructor(list:string[]=[]){
         this.list = list;
     }
     empty(): boolean {
@@ -21,3 +21,5 @@ class ArrayStack implements Stack {
         return this.list.pop();
     }
 }
+
+export{ArrayStack};

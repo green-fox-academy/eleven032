@@ -1,8 +1,7 @@
 interface LinkedList {
-    add(value: string): void;
-    add(index: number, value: string): void;
+    add(value: string, index?: number): void;
     get(index: number): string;
-    remove(value: string): void;
+    removeItem(value: string): void;
     remove(index: number): string;
     size(): number;
   }
@@ -23,9 +22,9 @@ interface LinkedList {
 
   interface Tree {
     empty(): boolean;
-    add(value: string): void;
-    remove(value: string): void;
-    search(value: string): boolean
+    add(value: number): void;
+    remove(value: number): void;
+    search(value: number): boolean
   }
 
   export {LinkedList, Stack, Queue, Tree};

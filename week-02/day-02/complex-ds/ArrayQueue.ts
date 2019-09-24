@@ -1,8 +1,8 @@
 import {Queue} from './ds';
 
 class ArrayQueue implements Queue{
-    list:string[] = [];
-    constructor(list:string[]){
+    private list:string[] = [];
+    constructor(list:string[]=[]){
         this.list = list;
     }
     empty(): boolean {
@@ -17,6 +17,6 @@ class ArrayQueue implements Queue{
     remove(): string {
         return this.list.shift();
     }
-
-    
 }
+
+export{ArrayQueue};
