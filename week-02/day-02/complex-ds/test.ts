@@ -3,6 +3,7 @@ import {ArrayStack} from './ArrayStack';
 import {MyLinkedList} from './MyLinkedList';
 import {NodeStack} from './NodeStack';
 import {BinaryTree} from './BinaryTree';
+import {queueInStack} from './QueueInStack';
 
 // let a = new ArrayQueue();
 // a.add('a');
@@ -65,7 +66,7 @@ c.add('e');
 
 
 //edge case
-c.add('out of range', 10);
+// c.add('out of range', 10);
 // console.log(c.remove(10));
 
 // let d = new NodeStack();
@@ -79,18 +80,29 @@ c.add('out of range', 10);
 // console.log(d.pop());
 
 
-let e = new BinaryTree();
-e.add(5);
-e.add(9);
+// let e = new BinaryTree();
+// e.add(5);
+// e.add(9);
 
-e.add(22);
-e.add(1);
-e.add(2);
-e.add(3);
+// e.add(22);
+// e.add(1);
+// e.add(2);
+// e.add(3);
 
-e.printLevel(e.getRoot());
-console.log('/////////////////////////////////////////////');
+// e.printLevel(e.getRoot());
+// console.log('/////////////////////////////////////////////');
 
-e.remove(22);
-e.printLevel(e.getRoot());
+// e.remove(22);
+// e.printLevel(e.getRoot());
+
+let f = new queueInStack();
+f.add('a');
+f.add('b');
+f.add('c');
+f.add('d');
+f.add('e');
+f.add('f');
+console.log(f.peek());
+f.remove();
+console.log(f.peek());
 
