@@ -81,16 +81,16 @@ c.add('e');
 // console.log(d.pop());
 
 
-// let e = new BinaryTree();
-// e.add(5);
-// e.add(9);
+let e = new BinaryTree();
+e.add(5);
+e.add(9);
 
-// e.add(22);
-// e.add(1);
+e.add(22);
+e.add(1);
 // e.add(2);
 // e.add(3);
-
-// e.printLevel(e.getRoot());
+console.log(e);
+e.printLevel(e.getRoot());
 // console.log('/////////////////////////////////////////////');
 
 // e.remove(22);
@@ -107,19 +107,19 @@ c.add('e');
 // f.remove();
 // console.log(f.peek());
 
-let g = new BST();
-g.add(8);
-g.add(3);
-g.add(10);
-g.add(1);
-g.add(6);
-g.add(14);
-g.add(4);
-g.add(7);
-g.add(13);
-console.log(g.DFSsearch(10));
+// let g = new BST();
+// g.add(8);
+// g.add(3);
+// g.add(10);
+// g.add(1);
+// g.add(6);
+// g.add(14);
+// g.add(4);
+// g.add(7);
+// g.add(13);
+// console.log(g.DFSsearch(10));
 
 
-console.log('/////////////////////////////////////');
+// console.log('/////////////////////////////////////');
 
 
