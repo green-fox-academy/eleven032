@@ -1,7 +1,12 @@
 import {
     Tree
 } from './ds';
-
+import{
+    ArrayStack
+} from './ArrayStack';
+import{
+    ArrayQueue
+} from './ArrayQueue';
 class Node {
     data: number;
     left: Node;
@@ -125,18 +130,77 @@ class BST implements Tree {
         }
     }
 
-    getRoot():Node{
+
+
+    BFSsearch(value:number):boolean{
+        let q = new ArrayQueue<Node>();
+        q.add(this.root);
+        while(!q.empty()){
+            let node = q.remove();
+            if(node.data === value){
+                return true;
+            } else {
+                if(node.left!==null){
+                    q.add(node.left);
+                }
+                if(node.right!==null){
+                    q.add(node.right);
+                }
+                
+            }
+        }
+        return false;
+    }
+
+    DFSsearch():boolean{
+        
+    }
+
+    // convertBalance(){
+    //     let nodes:Node[] = [];
+    //     this.storeBSTNodes(this.root,nodes);
+    //     let n = nodes.length;
+        
+    //     return this.building(nodes, 0, n-1);
+    // }
+
+    // private storeBSTNodes(node: Node, nodeList: Node[]): void {
+    //     //first check edge case
+    //     if (node === null) {
+    //         return;
+    //     }
+    //     this.storeBSTNodes(node.left, nodeList);
+    //     nodeList.push(node); 
+    //     this.storeBSTNodes(node.right, nodeList); 
+    // }
+
+    // private building(nodes:Node[], start:number, end:number):Node{
+    //     if(start>end){
+    //         return null;
+    //     }
+
+    //     let mid = (start+end)/2;
+    //     let node = nodes[mid];
+
+    //     node.left = this.building(nodes, start, mid-1);
+    //     node.right = this.building(nodes, mid+1,end);
+    //     return node;
+    // }
+
+    getRoot(): Node {
         return this.root;
     }
 
-    print(node : Node):void{
-        if(node === null){
+    print(node: Node): void {
+        if (node === null) {
             return;
         }
-        console.log(node.data); 
+        console.log(node.data);
         this.print(node.left);
-        this.print(node.right); 
+        this.print(node.right);
     }
 }
 
-export {BST}
+export {
+    BST
+}

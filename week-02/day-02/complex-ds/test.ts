@@ -117,9 +117,9 @@ g.add(14);
 g.add(4);
 g.add(7);
 g.add(13);
-g.print(g.getRoot());
+console.log(g.BFSsearch(50));
 
 
 console.log('/////////////////////////////////////');
-g.remove(8);
-g.print(g.getRoot());
+
+

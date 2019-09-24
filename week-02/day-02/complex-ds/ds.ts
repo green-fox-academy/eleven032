@@ -6,18 +6,18 @@ interface LinkedList {
     size(): number;
   }
 
-  interface Stack {
+  interface Stack<T> {
     empty(): boolean;
-    peek(): string;
-    push(value: string): void;
-    pop(): string;
+    peek(): T;
+    push(value: T): void;
+    pop(): T;
   }
 
-  interface Queue {
+  interface Queue<T> {
     empty(): boolean;
-    peek(): string;
-    add(value: string): void;
-    remove(): string;
+    peek(): T;
+    add(value: T): void;
+    remove(): T;
   }
 
   interface Tree {
