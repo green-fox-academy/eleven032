@@ -4,6 +4,7 @@ import {MyLinkedList} from './MyLinkedList';
 import {NodeStack} from './NodeStack';
 import {BinaryTree} from './BinaryTree';
 import {queueInStack} from './QueueInStack';
+import {BST} from './binarySearchTree';
 
 // let a = new ArrayQueue();
 // a.add('a');
@@ -95,14 +96,30 @@ c.add('e');
 // e.remove(22);
 // e.printLevel(e.getRoot());
 
-let f = new queueInStack();
-f.add('a');
-f.add('b');
-f.add('c');
-f.add('d');
-f.add('e');
-f.add('f');
-console.log(f.peek());
-f.remove();
-console.log(f.peek());
+// let f = new queueInStack();
+// f.add('a');
+// f.add('b');
+// f.add('c');
+// f.add('d');
+// f.add('e');
+// f.add('f');
+// console.log(f.peek());
+// f.remove();
+// console.log(f.peek());
 
+let g = new BST();
+g.add(8);
+g.add(3);
+g.add(10);
+g.add(1);
+g.add(6);
+g.add(14);
+g.add(4);
+g.add(7);
+g.add(13);
+g.print(g.getRoot());
+
+
+console.log('/////////////////////////////////////');
+g.remove(8);
+g.print(g.getRoot());
