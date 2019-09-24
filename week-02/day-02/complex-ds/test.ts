@@ -1,6 +1,7 @@
 import {ArrayQueue} from './ArrayQueue';
 import {ArrayStack} from './ArrayStack';
 import {MyLinkedList} from './MyLinkedList';
+import {NodeStack} from './NodeStack';
 
 // let a = new ArrayQueue();
 // a.add('a');
@@ -64,4 +65,16 @@ c.add('e');
 
 //edge case
 c.add('out of range', 10);
-console.log(c.remove(10));
+// console.log(c.remove(10));
+
+let d = new NodeStack();
+d.push('a');
+d.push('b');
+d.push('c');
+d.push('d');
+d.push('e');
+console.log(d.empty());
+console.log(d.peek());
+console.log(d.pop());
+
+
