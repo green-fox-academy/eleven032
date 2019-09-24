@@ -117,7 +117,7 @@ g.add(14);
 g.add(4);
 g.add(7);
 g.add(13);
-console.log(g.BFSsearch(50));
+console.log(g.DFSsearch(10));
 
 
 console.log('/////////////////////////////////////');

@@ -152,8 +152,24 @@ class BST implements Tree {
         return false;
     }
 
-    DFSsearch():boolean{
-        
+    DFSsearch(value:number):boolean{
+        let s = new ArrayStack<Node>();
+        s.push(this.root);
+        while(!s.empty()){
+            let node = s.pop();
+            if(node.data === value){
+                return true;
+            } else {
+                if(node.left!==null){
+                    s.push(node.left);
+                }
+                if(node.right!==null){
+                    s.push(node.right);
+                }
+                
+            }
+        }
+        return false;
     }
 
     // convertBalance(){
