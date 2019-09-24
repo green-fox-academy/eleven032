@@ -2,6 +2,7 @@ import {ArrayQueue} from './ArrayQueue';
 import {ArrayStack} from './ArrayStack';
 import {MyLinkedList} from './MyLinkedList';
 import {NodeStack} from './NodeStack';
+import {BinaryTree} from './BinaryTree';
 
 // let a = new ArrayQueue();
 // a.add('a');
@@ -67,14 +68,29 @@ c.add('e');
 c.add('out of range', 10);
 // console.log(c.remove(10));
 
-let d = new NodeStack();
-d.push('a');
-d.push('b');
-d.push('c');
-d.push('d');
-d.push('e');
-console.log(d.empty());
-console.log(d.peek());
-console.log(d.pop());
+// let d = new NodeStack();
+// d.push('a');
+// d.push('b');
+// d.push('c');
+// d.push('d');
+// d.push('e');
+// console.log(d.empty());
+// console.log(d.peek());
+// console.log(d.pop());
 
+
+let e = new BinaryTree();
+e.add(5);
+e.add(9);
+
+e.add(22);
+e.add(1);
+e.add(2);
+e.add(3);
+
+e.printLevel(e.getRoot());
+console.log('/////////////////////////////////////////////');
+
+e.remove(22);
+e.printLevel(e.getRoot());
 
