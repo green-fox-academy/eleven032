@@ -18,17 +18,21 @@ function merge(left: number[], right: number[]): number[] {
     const lItem = left[lIndex];
     const rItem = right[rIndex];
     if (lItem == null) {
-      array.push(rItem); rIndex++;
-    }
-    else if (rItem == null) {
-      array.push(lItem); lIndex++;
-    }
-    else if (lItem < rItem) {
-      array.push(lItem); lIndex++;
-    }
-    else {
-      array.push(rItem); rIndex++;
+      array.push(rItem);
+      rIndex++;
+    } else if (rItem == null) {
+      array.push(lItem);
+      lIndex++;
+    } else if (lItem < rItem) {
+      array.push(lItem);
+      lIndex++;
+    } else {
+      array.push(rItem);
+      rIndex++;
     }
   }
   return array;
 }
+
+let a = [6, 0, 3, 8, 7, 2, 5, 1];
+// console.log(mergeSort(a));
