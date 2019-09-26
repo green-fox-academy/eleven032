@@ -1,15 +1,43 @@
 import {
     Animal
 } from '../zoo/zoo';
+
+
+/**
+ *
+ *
+ * @interface Flyable
+ * description....
+ */
 interface Flyable {
+
     land(): void;
     fly(): void;
     takeOff(): void;
 }
+
+
+/**
+ *
+ *
+ * @abstract
+ * @class Vehicle
+ */
 abstract class Vehicle {
+    
     maker: string;
     year: number;
     power: string;
+    
+ 
+    /**
+     *Creates an instance of Vehicle.
+     * @param {string} maker
+     * 
+     * @param {number} year
+     * @param {string} power
+     * @memberof Vehicle
+     */
     constructor(maker: string, year: number, power: string) {
         this.maker = maker;
         this.year = year;
@@ -17,6 +45,15 @@ abstract class Vehicle {
     }
 }
 
+
+/**
+ *
+ *
+ * @class Helicopter
+ * @extends {Vehicle}
+ * @implements {Flyable}
+ * 
+ */
 class Helicopter extends Vehicle implements Flyable {
 
     constructor(maker: string, year: number, power: string) {
