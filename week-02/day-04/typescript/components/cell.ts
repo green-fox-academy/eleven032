@@ -10,7 +10,6 @@ class Cell {
     row: number,
     column: number,
     opened: boolean,
-    flagged: boolean,
     mined: boolean,
     neighborMineCount: number
   ) {
@@ -18,7 +17,6 @@ class Cell {
     this.column = column;
     this.id = row + "" + column;
     this.opened = opened;
-    this.flagged = flagged;
     this.mined = mined;
     this.neighborMineCount = neighborMineCount;
   }

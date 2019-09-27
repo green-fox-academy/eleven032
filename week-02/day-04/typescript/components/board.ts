@@ -4,7 +4,7 @@ function createBoard(boardSize: number, mineCount: number): {} {
   let board: {};
   for (let row = 0; row < boardSize; row++) {
     for (let column = 0; column < boardSize; column++) {
-      board[row + "" + column] = new Cell(row, column, false, false, false, 0);
+      board[row + "" + column] = new Cell(row, column, false, false, 0);
     }
   }
   board = randomlyAssignMines(board, mineCount, boardSize);
