@@ -1,10 +1,12 @@
 import { Cell } from "./cell";
 
 function createBoard(boardSize: number, mineCount: number): {} {
-  let board: {};
+  let board: Object = {};
   for (let row = 0; row < boardSize; row++) {
     for (let column = 0; column < boardSize; column++) {
-      board[row + "" + column] = new Cell(row, column, false, false, 0);
+      let cell:Cell = new Cell(row, column, false, false, 0);
+    //   cell.id = row + "" + column;
+      board[row + "" + column] = cell;
     }
   }
   board = randomlyAssignMines(board, mineCount, boardSize);
@@ -17,12 +19,12 @@ let randomlyAssignMines = function(
   mineCount: number,
   boardSize: number
 ) {
-  let mineCooridinates = [];
+  let mineCooridinates: string[] = [];
   for (let i = 0; i < mineCount; i++) {
     let randomRowCoordinate = getRandomInteger(0, boardSize);
     let randomColumnCoordinate = getRandomInteger(0, boardSize);
     let cell = randomRowCoordinate + "" + randomColumnCoordinate;
-    while (mineCooridinates.includes(cell)) {
+    while (mineCooridinates.indexOf(cell) > -1) {
       randomRowCoordinate = getRandomInteger(0, boardSize);
       randomColumnCoordinate = getRandomInteger(0, boardSize);
       cell = randomRowCoordinate + "" + randomColumnCoordinate;
@@ -66,7 +68,7 @@ let isMined = function(board: {}, id: string) {
   return mined;
 };
 
-let getNeighbors = function(id:string):string[] {
+let getNeighbors = function(id: string): string[] {
   let row = parseInt(id[0]);
   let column = parseInt(id[1]);
   let neighbors = [];

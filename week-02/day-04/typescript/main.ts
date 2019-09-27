@@ -1,3 +1,5 @@
+import { createBoard } from './components/board';
+import { printGame } from './components/printGame';
 let title = '##     ##  ##  ##    ## ########  ######  ##      ## ######## ######## ########  ######## ########\n' +
     '###   ###  ##  ###   ## ##       ##    ## ##  ##  ## ##       ##       ##     ## ##       ##     ##\n' +
     '#### ####  ##  ####  ## ##       ##       ##  ##  ## ##       ##       ##     ## ##       ##     ##\n' +
@@ -6,3 +8,7 @@ let title = '##     ##  ##  ##    ## ########  ######  ##      ## ######## #####
     '##     ##  ##  ##   ### ##       ##    ## ##  ##  ## ##       ##       ##        ##       ##    ##\n' +
     '##     ##  ##  ##    ## ########  ######   ###  ###  ######## ######## ##        ######## ##     ##\n';
 console.log(title);
+
+let board = createBoard(10,5);
+let view = printGame(10,board);
+console.log(view);
