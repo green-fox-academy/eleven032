@@ -90,4 +90,4 @@ let getNeighbors = function(id: string): string[] {
   return neighbors;
 };
 
-export { createBoard };
+export { createBoard, getNeighbors};
