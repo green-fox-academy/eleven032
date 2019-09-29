@@ -32,8 +32,4 @@ class Garden2 {
     }
 }
 
-
-const g1 = new Garden1(10, 10);
-console.log(g1.efficiency());
-const g2 = new Garden2(5, 5);
-console.log(g1.efficiency());
+module.exports = Garden2;
