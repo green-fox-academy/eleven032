@@ -10,3 +10,4 @@ let t : Test = {
 }
 
 t.number = 0;
+//shdihashd
