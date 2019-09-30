@@ -1,0 +1,29 @@
+#square31 {
+  background-color: rosybrown;
+  border-style: solid;
+  border-width: 15px;
+  border-color: blue;
+  width: 300px;
+  height: 250px;
+  color: aliceblue;
+}
+
+#square32 {
+  color: aliceblue;
+  background-color: steelblue;
+  margin-top: 5px;
+  border-style: solid;
+  border-width: 15px;
+  border-color: blue;
+  width: 300px;
+  height: 250px;
+}
+#square3 {
+  margin-top: 5em;
+}
+
+p {
+  text-align: center;
+  line-height: 65px;
+  font-size: 36px;
+}

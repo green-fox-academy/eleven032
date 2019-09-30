@@ -1,9 +1,28 @@
 .square02 {
-    margin: 2em;
-    background-color: aquamarine;
-    width: 300px;
-    height: 150px;
-    border: solid;
-    border-width: 5px;
-    font-size: 3em;
-  }
+  width: 300px;
+  height: 150px;
+  font-size: 36px;
+  color: aliceblue;
+  text-align: center;
+  line-height: 100px;
+}
+#s201 {
+  background-color: darkorange;
+}
+#s202 {
+  background-color: blueviolet;
+}
+#s203 {
+  background-color: antiquewhite;
+}
+#s204 {
+  background-color: brown;
+}
+
+#square02 {
+  border-style: solid;
+  border-width: 15px;
+  border-color: blue;
+  width: 300px;
+  height: auto;
+}

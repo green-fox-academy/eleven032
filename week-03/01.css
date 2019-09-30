@@ -1,9 +1,9 @@
 .square01 {
-  margin: 2em;
   background-color: aquamarine;
+  margin: 2em;
   width: 300px;
   height: 150px;
   border: solid;
   border-width: 5px;
-  font-size: 3em;
+  font-size: 36px;
 }
