@@ -1,7 +1,16 @@
 #exercise7 > p {
   color: blue;
+  background-color: yellow;
 }
-#exercise7 {
+#exercise7>div:last-child{
     color:blue;
+    font-weight: bold;
 }
 
+#exercise7 .container div{
+    border:solid;
+    border-width: 1px;
+    font-weight: bold;
+    border-right: auto;
+    color:green;
+}
