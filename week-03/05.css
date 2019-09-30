@@ -1,0 +1,23 @@
+#exercise5 > h1 {
+  color: blue;
+}
+
+#exercise5 h2 {
+  color: gold;
+}
+#exercise5 h2 > p {
+  color: black;
+  text-align: left;
+}
+
+#exercise5 :nth-child(3) > ul {
+  color: blue;
+}
+
+.nest {
+    color:black;
+}
+
+#highlight{
+    color: red;
+}
