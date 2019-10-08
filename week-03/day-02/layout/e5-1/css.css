@@ -1,0 +1,52 @@
+html .body {
+  align-items: center;
+  display: flex;
+  margin: 0;
+}
+.container {
+  width: 100vw;
+}
+.header {
+  width: 100%;
+  height: 5em;
+  background-color: aqua;
+}
+
+.body-container {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+}
+
+.item1 {
+  background-color: orange;
+  width: 200px;
+}
+
+.item2 {
+  background-color: red;
+  flex-grow: 1;
+  margin: 0 20px 0 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.fixed {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  margin: 20px;
+  
+}
+
+.item3 {
+  background-color: purple;
+  width: 200px;
+}
+
+.footer {
+  background-color: blue;
+  width: 100%;
+  height: 5em;
+}
