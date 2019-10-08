@@ -1,0 +1,121 @@
+.container {
+  align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container {
+  width: 100%;
+  height: 5em;
+  display: flex;
+  flex-direction: row;
+  background-color: purple;
+  top: 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.body-container {
+  display: flex;
+  justify-content: space-between;
+  height: 90vh;
+}
+
+.left {
+  background-color: yellow;
+  padding: 30px;
+  flex-grow: 1;
+  max-width: 600px;
+}
+.square-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.square-container1 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.square-container2 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+.text {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.right {
+  background-color: green;
+  width: 400px;
+  padding: 30px;
+}
+
+.head-left {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: fit-content;
+}
+
+.head-right {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: fit-content;
+}
+
+.item {
+  height: 3em;
+  background-color: aqua;
+  margin: 20px;
+}
+
+.first {
+  width: 200px;
+}
+
+.second {
+  width: 100px;
+}
+
+.third {
+  width: 150px;
+}
+
+.forth {
+  width: 50px;
+}
+
+.fifth {
+  width: 50px;
+}
+
+.grey {
+  background-color: grey;
+  width: 100%;
+  height: 2em;
+  margin:10px;
+}
+.grey-container {
+  width: 100%;
+  height: 12em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
