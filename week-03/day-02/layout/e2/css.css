@@ -2,25 +2,20 @@
   width: 100%;
   height: 500px;
   margin: 20px auto;
-  align-items: center;
-  display: flex;
-}
-
-.item {
-  height: 80%;
-}
-
-.green {
-  flex-grow: 1;
-  background-color: greenyellow;
+  /* align-items: center; */
+  /* display: flex; */
 }
 
 .yellow {
-  flex-grow: 2;
   background-color: yellow;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .purple {
-  flex-grow: 1;
+  width: 14%;
+  height: 33%;
   background-color: purple;
 }
