@@ -1,9 +1,7 @@
-.container {
-  align-items: center;
-  width: 90%;
-}
-
 .header-container {
+  top: 0;
+  margin-left: 0%;
+  position: fixed;
   width: 100%;
   height: 50px;
   display: flex;
@@ -12,36 +10,54 @@
 }
 
 .body-container {
+  width: 100%;
   display: flex;
   flex-direction: row;
+  margin-top: 60px;
 }
+
 .item {
   margin: 10px;
   background-color: cyan;
 }
 
 .first {
-  width: 100px;
-}
-
-.second {
-  width: 60px;
-}
-
-.third {
   width: 70px;
 }
 
+.second {
+  width: 100px;
+}
+
+.third {
+  width: 60px;
+}
+
+.forth {
+  width: 70px;
+}
 .left {
-  flex-grow: 2;
+  margin-left: 20px;
+  flex-grow: 1;
   height: 100vh;
   float: left;
   background-color: yellow;
 }
 
 .right {
-  flex-grow: 1;
+  margin-left: 10px;
+  margin-right: 20px;
+  flex-grow: 2;
   height: 100vh;
   float: right;
   background-color: greenyellow;
+}
+
+.footer {
+  width: 100%;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-right: 20px;
+  height: 50px;
+  background-color: gray;
 }
