@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Workshop: CreateElement</title>
-  </head>
-  <body>
-    <ul class="asteroids">
-      <li id="b325" class="asteroid">The King</li>
-      <li class="asteroid b326">The Conceited Man</li>
-    </ul>
-    <div class="container"></div>
 
-    <!-- You can work in the html or in a separate js file. Like:
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: CreateElement</title>
+</head>
+
+<body>
+  <ul class="asteroids">
+    <li id="b325" class="asteroid">The King</li>
+    <li class="asteroid b326">The Conceited Man</li>
+  </ul>
+  <div class="container"></div>
+
+  <script>
+    const ul = document.querySelector('ul.asteroids');
+    const container = document.querySelector('div.container');
+
+    const newEle1 = document.createElement('li');
+    const newEle2 = document.createElement('li');
+    const newEle3 = document.createElement('h1');
+    const img = document.createElement('img');
+
+    newEle1.textContent = 'The Green Fox';
+    newEle2.textContent = 'he Lamplighter';
+    newEle3.textContent = 'I can add elements to the DOM!';
+    img.setAttribute('src', 'https://gss0.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=b515aa22d600baa1ba794fbd7720952a/55e736d12f2eb938b1781d3cd2628535e4dd6fe2.jpg');
+
+    ul.appendChild(newEle1);
+    ul.appendChild(newEle2);
+    container.appendChild(newEle3);
+    container.appendChild(img);
+  </script>
+
+  <!-- You can work in the html or in a separate js file. Like:
 
     <script>
       Add an item that says 'The Green Fox' to the asteroid list.
@@ -26,5 +48,6 @@
     OR
 
     <script src="createelement-1.js"></script> -->
-  </body>
+</body>
+
 </html>
