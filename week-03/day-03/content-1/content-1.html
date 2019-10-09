@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Workshop: innerHTML, textContent</title>
-  </head>
-  <body>
-    <p class="apple">apple</p>
-    <p class="balloon">banana</p>
-    <p class="cat">car</p>
-    <p class="animals">goat rabbit <strong>cat</strong> dog</p>
 
-    <!-- You can work in the html or in a separate js file. Like:
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: innerHTML, textContent</title>
+</head>
+
+<body>
+  <p class="apple">apple</p>
+  <p class="balloon">banana</p>
+  <p class="cat">car</p>
+  <p class="animals">goat rabbit <strong>cat</strong> dog</p>
+
+  <script>
+    const textContent = ' ' + document.getElementsByClassName('animals')[0].innerText;
+    const htmlContent = ' ' + document.getElementsByClassName('animals')[0].innerHTML;
+
+    const list = document.querySelectorAll('p');
+    for (let i = 0; i < list.length; i++) {
+      list[i].innerText += textContent;
+    }
+
+    for (let i = 0; i < list.length; i++) {
+      list[i].innerHTML += htmlContent;
+    }
+    
+  </script>
+  <!-- You can work in the html or in a separate js file. Like:
 
     <script>
     1)  Fill every paragraph with the last one's content.
@@ -21,5 +37,6 @@
     OR
 
     <script src="content-1.js"></script> -->
-  </body>
+</body>
+
 </html>
