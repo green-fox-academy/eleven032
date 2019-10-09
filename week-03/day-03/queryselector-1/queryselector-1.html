@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Workshop: QuerySelector</title>
-  </head>
-  <body>
-    <section class="container">
-      <div id="b325" class="asteroid">The King</div>
-      <div class="asteroid b326">The Conceited Man</div>
-    </section>
-    <p class="asteroid big">The Businessman</p>
-    <div class="asteroid b329 big">The Lamplighter</div>
 
-    <!-- You can work in the html or in a separate js file. Like:
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: QuerySelector</title>
+</head>
+
+<body>
+  <section class="container">
+    <div id="b325" class="asteroid">The King</div>
+    <div class="asteroid b326">The Conceited Man</div>
+  </section>
+  <p class="asteroid big">The Businessman</p>
+  <div class="asteroid b329 big">The Lamplighter</div>
+
+  <script>
+    const king = document.getElementById('b325');
+    console.log(king.innerHTML);
+
+    const businessLamp = [];
+    businessLamp.push(document.querySelector('.asteroid.big'));
+    businessLamp.push(document.querySelector('.asteroid.b329.big'));
+    businessLamp.forEach(function (element) {
+      console.log(element.innerHTML);
+    });
+    const conceitedKing = [];
+    conceitedKing.push(king);
+    conceitedKing.push(document.querySelector('.asteroid.b326'));
+    conceitedKing.forEach(function (element) {
+      alert(element.innerHTML);
+    });
+    const noBusiness = [];
+    noBusiness.push(king);
+    noBusiness.push(...businessLamp);
+
+    noBusiness.forEach(function (element) {
+      console.log(element.innerHTML);
+    });
+  </script>
+
+  <!-- You can work in the html or in a separate js file. Like:
 
     <script>
       1. store the element that says 'The King' in the 'king' variable.
       console.log it.
-
+      
       2. store 'The Businessman' and 'The Lamplighter'
       in the 'businessLamp' variable.
       console.log each of them.
@@ -35,5 +62,6 @@
     OR
 
     <script src="queryselector-1.js"></script> -->
-  </body>
+</body>
+
 </html>
