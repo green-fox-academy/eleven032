@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Workshop: innerHTML, textContent</title>
-  </head>
-  <body>
-    <ul>
-      <li>placeholder</li>
-      <li>placeholder</li>
-      <li>placeholder</li>
-      <li>placeholder</li>
-    </ul>
 
-    <!-- You can work in the html or in a separate js file. Like:
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: innerHTML, textContent</title>
+</head>
+
+<body>
+  <ul>
+    <li>placeholder</li>
+    <li>placeholder</li>
+    <li>placeholder</li>
+    <li>placeholder</li>
+  </ul>
+
+  <script>
+    const list = ['apple', 'banana', 'cat', 'dog'];
+    let index = 0;
+    for (let element of document.getElementsByTagName('li')) {
+      element.innerText = list[index];
+      element.style.backgroundColor = 'limegreen';
+      index++;
+    }
+  </script>
+  <!-- You can work in the html or in a separate js file. Like:
 
     <script>
       1) replace the list items' content with items from this list:
@@ -25,5 +36,6 @@
     OR
 
     <script src="content-2.js"></script> -->
-  </body>
+</body>
+
 </html>
