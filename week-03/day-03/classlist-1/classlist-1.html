@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Workshop: ClassList</title>
-    <style>
-      .red {
-        color: red;
-      }
-      .balloon {
-        background-color: lime;
-        border-radius: 100%;
-      }
-      .pear {
-        background: lime;
-        padding: 2rem;
-        text-decoration: uppercase;
-      }
-    </style>
-  </head>
-  <body>
-    <p class="apple">apple</p>
-    <p class="balloon">balloon</p>
-    <p class="cat red-dot">cat</p>
-    <p>dolphin</p>
 
-    <!-- You can work in the html or in a separate js file. Like:
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: ClassList</title>
+  <style>
+    .red {
+      color: red;
+    }
+
+    .balloon {
+      background-color: lime;
+      border-radius: 100%;
+    }
+
+    .pear {
+      background: lime;
+      padding: 2rem;
+      text-decoration: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="apple">apple</p>
+  <p class="balloon">balloon</p>
+  <p class="cat red-dot">cat</p>
+  <p>dolphin</p>
+
+  <script>
+    const list = document.querySelectorAll('p');
+    if (list[3].classList.contains('dolphin')) {
+      document.querySelector('.apple').innerHTML = pear;
+    }
+
+    if (list[0].classList.contains('apple')) {
+      document.querySelector('.cat').innerHTML = 'dog';
+    }
+
+    document.querySelector('.apple').classList.add('red');
+    document.querySelector('.balloon').classList.remove('balloon');
+  </script>
+  <!-- You can work in the html or in a separate js file. Like:
     <script>
 
       If the fourth p has a 'dolphin' class, replace apple's content with 'pear'
@@ -40,5 +57,6 @@
     OR
 
     <script src="classlist-1.js"></script> -->
-  </body>
+</body>
+
 </html>
