@@ -11,13 +11,13 @@
 
   <script>
     const b = document.querySelector('button');
-    let flag = false;
-    b.addEventListener('click', () => {
-      if (!flag) {
-        console.log(new Date().getTime());
-        flag = true;
-      }
-    });
+    function handler() {
+      console.log(new Date().getTime());
+      b.removeEventListener('click', handler);
+    }
+    b.addEventListener('click', handler);
+
+
   </script>
   <!-- You can work in the html or in a separate js file. Like:
 
