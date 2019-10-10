@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>click</button>
+    <div class="result"></div>
+</body>
+
+
+<script>
+    let sec = new Date().getTime();
+    let count = 1;
+    const b = document.querySelector('button');
+    const div = document.querySelector('div');
+    b.addEventListener('click', () => {
+        if (count < 3) {
+            count++;
+        } else {
+            let time = new Date().getTime();
+            let gap = time - sec;
+            let days = Math.floor(gap / (24 * 3600 * 1000))
+
+            //计算出小时数
+
+            let leave1 = gap % (24 * 3600 * 1000)
+            let hours = Math.floor(leave1 / (3600 * 1000))
+            //计算相差分钟数
+            let leave2 = leave1 % (3600 * 1000)
+            let minutes = Math.floor(leave2 / (60 * 1000))
+            //计算相差秒数
+            let leave3 = leave2 % (60 * 1000)
+            let seconds = Math.round(leave3 / 1000)
+            if (seconds > 5) {
+                div.innerText = '5 seconds elapsed and clicked 3 times';
+            }
+
+        }
+
+    });
+
+
+
+
+
+
+
+
+</script>
+
+</html>
