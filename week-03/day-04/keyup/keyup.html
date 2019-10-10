@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Workshop: EventListeners</title>
-  </head>
-  <body>
-    <h1>No last pressed key</h1>
 
-    <!-- You can work in the html or in a separate js file. Like:
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: EventListeners</title>
+</head>
+
+<body>
+  <h1>No last pressed key</h1>
+
+  <script>
+    const area = this;
+    area.addEventListener('keyup', (event) => {
+      const res = document.querySelector('h1');
+      console.log(event);
+      res.innerText = event.keyCode;
+    });
+  </script>
+  <!-- You can work in the html or in a separate js file. Like:
 
     <script>
       1) Subscibe to keyup events on the global window object
@@ -18,5 +28,6 @@
     OR
 
     <script src="keyup.js"></script> -->
-  </body>
+</body>
+
 </html>

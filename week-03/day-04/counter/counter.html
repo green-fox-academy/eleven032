@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Workshop: EventListeners</title>
-  </head>
-  <body>
-    <ul>
-      <li>apple</li>
-      <li>balloon</li>
-      <li>cat</li>
-      <li>dolphin</li>
-    </ul>
-    <button>How many items are in the list?</button>
-    <p class="result">dunno :(</p>
 
-    <!-- You can work in the html or in a separate js file. Like:
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: EventListeners</title>
+</head>
 
-    <script>
-      On the click of the button,
-      Count the items in the list
-      And display the result in the result element.
-    </script>
+<body>
+  <ul>
+    <li>apple</li>
+    <li>balloon</li>
+    <li>cat</li>
+    <li>dolphin</li>
+  </ul>
+  <button>How many items are in the list?</button>
+  <p class="result">dunno :(</p>
 
-    OR
+  <script>
+    const ul = document.querySelector('ul');
+    const button = document.querySelector('button');
 
-    <script src="events-2.js"></script> -->
-  </body>
+    let list = ul.children;
+
+    button.addEventListener('click', () => {
+      document.querySelector('.result').innerHTML = list.length;
+    })
+  </script>
+
+</body>
+
 </html>
