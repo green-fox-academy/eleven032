@@ -40,6 +40,6 @@ setInterval(function () {
             count = count / 10;
         }
         first = count;
-        document.querySelector('.candies').innerHTML += first.toString();
+        let n = parseInt(document.querySelector('.candies').innerHTML) + first;
     }
 }, 1000);
