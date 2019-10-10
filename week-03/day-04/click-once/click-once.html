@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Workshop: EventListeners</title>
-  </head>
-  <body>
-    <button>Click me</button>
 
-    <!-- You can work in the html or in a separate js file. Like:
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: EventListeners</title>
+</head>
+
+<body>
+  <button>抚摸我～</button>
+
+  <script>
+    const b = document.querySelector('button');
+    let flag = false;
+    b.addEventListener('click', () => {
+      if (!flag) {
+        console.log(new Date().getTime());
+        flag = true;
+      }
+    });
+  </script>
+  <!-- You can work in the html or in a separate js file. Like:
 
     <script>
       Create an event listener which logs the current timestamp to the console once the button is clicked.
@@ -19,5 +31,6 @@
     OR
 
     <script src="one-time-clicker.js"></script> -->
-  </body>
+</body>
+
 </html>
