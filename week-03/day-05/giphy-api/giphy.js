@@ -8,9 +8,13 @@ fetch(URL)
         const div = document.querySelector('.container');
         div.appendChild(ul);
         data.data.forEach(element => {
+
             let li = document.createElement('li');
             let img = document.createElement('img');
-            img.setAttribute('src', element.url);
+            img.setAttribute('src', element.images['480w_still'].url);
+            img.addEventListener('click', () => {
+                img.setAttribute('src', element.images['original'].url)
+            });
             li.appendChild(img);
             ul.appendChild(li);
         });
