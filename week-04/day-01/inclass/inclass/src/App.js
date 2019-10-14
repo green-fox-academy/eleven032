@@ -19,8 +19,43 @@ function App() {
           Learn React
         </a>
       </header>
+      <FirstClass hello='hello!' />
+      {/* <SecondClass second='Hello2!' /> */}
     </div>
   );
+}
+
+class FirstClass extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 5 };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  generate() {
+    let result = '';
+    for (let i = 0; i < this.state; i++) {
+      result += this.props.hello
+    }
+    console.log(result);
+
+    return result;
+  }
+
+  handleClick() {
+    this.setState({ count: this.state.count + 1 })
+  }
+
+  render() {
+    return <p onClick={this.handleCqlick}>
+      {this.generate()}
+    </p>
+  }
+}
+
+
+function SecondClass(props) {
+  return <p>{props.second}</p>
 }
 
 export default App;
