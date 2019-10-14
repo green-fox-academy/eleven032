@@ -1,24 +1,30 @@
 import React from 'react';
 
 class Right extends React.Component {
+    test() {
+        console.log(this.props.hotel);
+
+    }
     render() {
+        // this.test();
         const style = {
-            float: 'right'
-        }
+            display: "flex",
+            flexDirection: "column"
+        };
         return (
             <div>
                 <h2>Hotel List</h2>
-                {this.props.hotels.map(item => {
-                    <div>
+                {this.props.hotel.map(item => {
+                    return (<div key={item.name}>
                         <h3>{item.name}</h3>
-                        <div style="dispaly:flex">
+                        <div style={{dispaly:'flex'}}>
                             <img src={item.imageURL}></img>
-                            <div >
+                            <div style={style}>
                                 <p>{item.description}</p>
-                                
+                                <button>Book Now!</button>
                             </div>
                         </div>
-                    </div>
+                    </div>)
                 }
                 )}
             </div>
