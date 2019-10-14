@@ -17,9 +17,12 @@ class App extends React.Component {
   }
 
   decrease() {
-    this.setState({
-      num: this.state.num - 1
-    })
+    if (this.state.num !== 0) {
+      this.setState({
+        num: this.state.num - 1
+      })
+    }
+
   }
 
   render() {
