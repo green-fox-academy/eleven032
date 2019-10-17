@@ -16,7 +16,7 @@ class RightArrow extends React.Component {
             transform: 'rotate(180deg)'
         }
         return (
-            <img style={style} src={require('../pictures/arrows/arrow.svg')}></img>
+            <img onClick={this.props.move} style={style} src={require('../pictures/arrows/arrow.svg')}></img>
         )
     }
 }

@@ -12,23 +12,9 @@ const lists = {
   p7: ""
 }
 
-
 const pics = Object.keys(lists).map(item => require("./pictures/" + item + ".jpg"));
 
-
-
 class Gallery extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      curr: ""
-    }
-  }
-
-  componentDidMount() {
-    // console.log(typeof (pics[0]));
-
-  }
 
   render() {
     const style = {

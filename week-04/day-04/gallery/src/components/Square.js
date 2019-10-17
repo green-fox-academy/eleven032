@@ -13,9 +13,8 @@ class Square extends React.Component {
             flexGrow: '12'
         }
 
-        
         return (<div >
-            <img style={style} src='/static/media/p1.9cf3ddc7.jpg'></img>
+            <img style={style} src={this.props.curr}></img>
         </div>)
     }
 }

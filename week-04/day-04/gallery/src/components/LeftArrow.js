@@ -18,7 +18,7 @@ class LeftArrow extends React.Component {
             height: '660px',
             flexGrow: '1'
         }
-        return (<img style={style} src={require('../pictures/arrows/arrow.svg')}></img>)
+        return (<img onClick={this.props.move} style={style} src={require('../pictures/arrows/arrow.svg')}></img>)
     }
 }
 
