@@ -7,36 +7,27 @@ class Viewer extends React.Component {
     constructor(props) {
         //all list of pics
         super(props);
-        this.state = {
-            index: 0,
-            curr: this.props.pics[0]
-        }
+        
 
         this.moveLeft = this.moveLeft.bind(this);
         this.moveRight = this.moveRight.bind(this);
     }
 
     moveLeft() {
-        if (this.state.index === 0) {
-            this.setState({
-                index: 6,
-                curr: this.props.pics[6]
-            })
+        if (this.props.index === 0) {
+            this.props.itemChange(this.props.pics[6]);
         } else {
-            let i = this.state.index - 1;
-            this.setState({ index: i, curr: this.props.pics[i] })
+            let i = this.props.index - 1;
+            this.props.itemChange(this.props.pics[i]);
         }
     }
 
     moveRight() {
-        if (this.state.index === 6) {
-            this.setState({
-                index: 0,
-                curr: this.props.pics[0]
-            })
+        if (this.props.index === 6) {
+            this.props.itemChange(this.props.pics[0]);
         } else {
-            let i = this.state.index + 1;
-            this.setState({ index: i, curr: this.props.pics[i] })
+            let i = this.props.index + 1;
+            this.props.itemChange(this.props.pics[i]);
         }
     }
 
@@ -54,11 +45,10 @@ class Viewer extends React.Component {
 
         return (<div style={style}>
             <LeftArrow move={this.moveLeft} />
-            <Square curr={this.state.curr} />
+            <Square curr={this.props.curr} />
             <RightArrow move={this.moveRight} />
         </div>)
     }
 }
 
 export default Viewer;
-

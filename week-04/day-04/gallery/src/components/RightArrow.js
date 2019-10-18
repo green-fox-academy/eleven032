@@ -9,7 +9,6 @@ class RightArrow extends React.Component {
         const style = {
             display:'flex',
             marginRight: '0px',
-            border: '1px solid red',
             width: '100px',
             height: '660px',
             flexGrow : '1',

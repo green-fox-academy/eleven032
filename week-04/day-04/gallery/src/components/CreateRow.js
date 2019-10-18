@@ -6,18 +6,31 @@ class CreateRow extends React.Component {
     }
 
     render() {
-        const style = {
-            display: 'flex',
-            border: '1px solid #ddd',
-            borderRadius: '4px',
-            padding: '5px',
-            width: '100px'
-        }
-        return (<div>
-            <a>
+        if (this.props.focus) {
+            const style = {
+                display: 'flex',
+                border: '1px solid #ddd',
+                borderRadius: '4px',
+                padding: '5px',
+                width: '100px',
+                outline: '3px solid orange'
+            }
+            return (<div>
                 <img style={style} src={this.props.item}></img>
-            </a>
-        </div>)
+            </div>)
+        } else {
+            const style = {
+                display: 'flex',
+                border: '1px solid #ddd',
+                borderRadius: '4px',
+                padding: '5px',
+                width: '100px'
+            }
+            return (<div>
+                <img style={style} src={this.props.item} onClick={()=>this.props.handleClick(this.props.item)}></img>
+            </div>)
+        }
+
 
     }
 }

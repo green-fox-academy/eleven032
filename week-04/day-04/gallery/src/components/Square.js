@@ -8,7 +8,6 @@ class Square extends React.Component {
     render() {
         const style = {
             width: '1100px',
-            border: '1px solid black',
             height: '660px',
             flexGrow: '12'
         }
