@@ -19,4 +19,11 @@ const removeTags = () => {
     }
 }
 
-export { add, removeTag, removeTags }
+const display = () => {
+    return {
+        type: 'DISPLAY'
+    }
+}
+
+
+export { add, removeTag, removeTags, display }

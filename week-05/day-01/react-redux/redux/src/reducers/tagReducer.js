@@ -2,24 +2,25 @@
 //     tags: []
 // }
 
-function tagReducer(state = [], action) {
-    console.log(action, state);
+function tagReducer(state = ['blue', 'bold', 'hipster'], action) {
+    // console.log(action, state);
     switch (action.type) {
         case 'ADD_TAG':
-            return [...state.tags, action.tag]
-
+            return [...state, action.tag]
 
         case 'REMOVE_TAG':
-            return state.tags.filter((value) => {
+            return state.filter((value) => {
                 return value !== action.tag
             })
 
         case 'REMOVE_TAGS':
             return action.tag
 
+        case 'DISPLAY':
+            return state
+
         default:
             return state;
-
     }
 
 }
