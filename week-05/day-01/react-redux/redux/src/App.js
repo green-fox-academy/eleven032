@@ -7,6 +7,7 @@ import AddTag from './components/AddTag';
 import Display from './components/DisplayTags';
 import RemoveTag from './components/RemoveTag';
 import Counter from './components/Counter';
+import RemoveTags from './components/RemoveAll';
 function App() {
 
   return (
@@ -19,6 +20,7 @@ function App() {
       <AddTag />
       <RemoveTag />
       <Counter />
+      <RemoveTags />
     </div>
   );
 }
