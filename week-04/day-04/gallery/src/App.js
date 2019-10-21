@@ -33,6 +33,7 @@ class Gallery extends React.Component {
     console.log(this.state.curr);
     console.log(this.state.index);
   }
+  
   render() {
     const style = {
       display: 'flex',
