@@ -1,15 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { increase } from '../actions/counterAction'
-function Increaser({ counter, handleChange }) {
+import { decrease } from '../actions/counterAction'
+
+function Decreaser({ counter, handleChange }) {
     return (
         <div className="container">
-            <h1>The Increaser</h1>
+            <h1>The Decreaser</h1>
             <h3>{counter}</h3>
-            <button onClick={handleChange}>Increase</button>
+            <button onClick={handleChange}>Decrease</button>
         </div>
     )
 }
+
 
 const mapStateToProps = (state) => {
     return {
@@ -19,8 +21,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleChange: () => dispatch(increase())
+        handleChange: () => dispatch(decrease())
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Increaser);
+export default connect(mapStateToProps, mapDispatchToProps)(Decreaser);

@@ -1,33 +1,27 @@
-const initState = {
-    counter: 0,
-    tags: []
-}
+// const initState = {
+//     counter: 0,
+//     tags: []
+// }
 
-function counterReducer(state = initState, action) {
+function counterReducer(state = 0, action) {
     switch (action.type) {
         case 'SET':
-            return {
-                ...state,
-                counter: action.amount
-            }
+            return action.amount
+
 
         case 'INCREASE':
-            return {
-                ...state,
-                counter: state.counter + action.amount
-            }
+            return state + action.amount
+
         case 'RESET':
-            return {
-                ...state,
-                counter: action.amount
-            }
+            return action.amount
+
         case 'DECREASE':
-            return {
-                ...state,
-                counter: state.counter - action.amount
-            }
+            return state - action.amount
+
+        default:
+            return state;
     }
-    return state;
+
 }
 
-module.exports = counterReducer;
+export default counterReducer;
