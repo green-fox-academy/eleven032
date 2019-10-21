@@ -1,3 +1,8 @@
+// import tagReducer from './reducers/tagReducer';
+
+const tagReducer = require('./reducers/tagReducer');
+// import { add, removeTag, removeTags } from './actions/tagActions'
+
 const redux = require('redux');
 
 const initState = {
@@ -6,8 +11,7 @@ const initState = {
 }
 
 function reducer(state = initState, action) {
-    console.log(action, state);
-
+    // console.log(action, state);
     switch (action.type) {
         case 'SET':
             return {
@@ -31,55 +35,86 @@ function reducer(state = initState, action) {
                 counter: state.counter - action.amount
             }
     }
+    return state;
 }
 
-const store = redux.createStore(reducer);
+// function tagReducer(state = initState, action) {
+//     console.log(action, state);
+//     switch (action.type) {
+//         case 'ADD_TAG':
+//             return {
+//                 ...state,
+//                 tags: [...state.tags, action.tag]
+//             }
 
-const set = (amount) => {
-    return {
-        type: 'SET',
-        amount
-    }
-}
+//         case 'REMOVE_TAG':
+//             return {
+//                 ...state,
+//                 tags: state.tags.filter((value) => {
+//                     return value !== action.tag
+//                 })
+//             }
+//         case 'REMOVE_TAGS':
+//             return {
+//                 ...state,
+//                 tag: action.tag
+//             }
 
-const reset = () => {
-    return {
-        type: 'RESET',
-        amount: 0
-    }
-}
+//     }
+//     return state;
+// }
 
-const increase = (amount) => {
-    if (amount === undefined) {
-        return {
-            type: 'INCREASE',
-            amount: 1
-        }
-    } else {
-        return {
-            type: 'INCREASE',
-            amount
-        }
-    }
-}
+const rootReducer = redux.combineReducers({
+    reducer,
+    tagReducer
+});
+const store = redux.createStore(rootReducer)
 
-const decrease = (amount) => {
-    if (amount === undefined) {
-        return {
-            type: 'DECREASE',
-            amount: 1
-        }
-    } else {
-        return {
-            type: 'DECREASE',
-            amount
-        }
-    }
-}
+// const set = (amount) => {
+//     return {
+//         type: 'SET',
+//         amount
+//     }
+// }
 
-store.dispatch(set(6));
-store.dispatch(increase());
-store.dispatch(increase(2));
-store.dispatch(reset());
-store.dispatch(increase());
-store.dispatch(decrease(4));
+// const reset = () => {
+//     return {
+//         type: 'RESET',
+//         amount: 0
+//     }
+// }
+
+// const increase = (amount) => {
+//     if (amount === undefined) {
+//         return {
+//             type: 'INCREASE',
+//             amount: 1
+//         }
+//     } else {
+//         return {
+//             type: 'INCREASE',
+//             amount
+//         }
+//     }
+// }
+
+// const decrease = (amount) => {
+//     if (amount === undefined) {
+//         return {
+//             type: 'DECREASE',
+//             amount: 1
+//         }
+//     } else {
+//         return {
+//             type: 'DECREASE',
+//             amount
+//         }
+//     }
+// }
+
+store.dispatch({ type: 'ADD_TAG', tag: 'blue' });
+store.dispatch({ type: 'ADD_TAG', tag: 'bold' });
+store.dispatch({ type: 'ADD_TAG', tag: 'hipster' });
+store.dispatch({ type: 'REMOVE_TAG', tag: 'blue' });
+store.dispatch({ type: 'ADD_TAG', tag: 'bold' });
+store.dispatch({ type: 'REMOVE_TAGS' });
