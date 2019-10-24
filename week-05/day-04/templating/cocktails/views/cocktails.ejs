@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./../static/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1><%= title %></h1>
+
+        <div class="alcoholList">
+            <ul class="alcohols">
+                <li class="alcohol"><a href="/">ALL</a></li>
+                <% alcoholList.forEach(alcohol => { %>
+                <li class='alcohol'> <a href="/?alcohol=<%= alcohol %>">
+                        <%= alcohol %></a></li>
+                <%})%>
+            </ul>
+        </div>
+        <div class="container-fluid" style="margin-top: 10px">
+            <div class="table-row header">
+                <div class="text">NAME</div>
+                <div class="num">PRICE</div>
+            </div>
+            <div class="table-row">
+                <% cocktails.forEach(cocktail => { %>
+                <div class="text">
+                    <%= cocktail['name'] %>
+                    <% if (!cocktail['isAlcoholic']) {%>
+                    (non-alcoholic)
+                    <% } %>
+                    <br>
+                    <%= cocktail['contains'] %>
+                </div>
+                <div class="num">
+                    <%= cocktail['price'] %>
+                </div>
+                <%})%>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
