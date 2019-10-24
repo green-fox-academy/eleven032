@@ -1,0 +1,16 @@
+{
+  "name": "greetings",
+  "version": "1.0.0",
+  "description": "---\r *A simple page to greet somebody.*",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  }
+}
