@@ -1,0 +1,16 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "The project structure we will be working with will look like this:\r ![structure](../assets/structure.png)\r * `views/` will contain our EJS templates\r * `index.js` will have our Express configuration and routes\r * `package.json` will maintain our dependencies (Express and EJS)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  }
+}
