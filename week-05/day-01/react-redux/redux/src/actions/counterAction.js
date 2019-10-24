@@ -40,4 +40,21 @@ const decrease = (amount) => {
     }
 }
 
-export { set, reset, increase, decrease }
+
+const asyncIncreaseHelper = (num, sec) => {
+    return (dispatch) => {
+        setTimeout(function () { dispatch(asyncIncrease(num)); }, sec*1000);
+    }
+
+
+
+}
+
+const asyncIncrease = (num) => {
+    return {
+        type: 'ASYNC_INCREASE',
+        amount: num
+    }
+}
+
+export { set, reset, increase, decrease, asyncIncreaseHelper }

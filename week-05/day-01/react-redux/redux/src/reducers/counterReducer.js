@@ -18,6 +18,9 @@ function counterReducer(state = 0, action) {
         case 'DECREASE':
             return state - action.amount
 
+        case 'ASYNC_INCREASE':
+            return state + action.amount
+
         default:
             return state;
     }

@@ -8,10 +8,12 @@ import Display from './components/DisplayTags';
 import RemoveTag from './components/RemoveTag';
 import Counter from './components/Counter';
 import RemoveTags from './components/RemoveAll';
+import AsyncCounter from './components/AsyncCounter';
 function App() {
 
   return (
     <div className="App">
+      <AsyncCounter />
       <Increaser />
       <Decreaser />
       <Resetter />
