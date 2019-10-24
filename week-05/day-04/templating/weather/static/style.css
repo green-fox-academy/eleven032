@@ -1,0 +1,25 @@
+.boardContainer {
+  margin: 10px;
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
+.board {
+  border: solid gray 2px;
+  margin: 10px;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.detailContainer {
+  display: flex;
+  margin: 10px;
+}
+
+.detailBoard {
+  margin: 10px;
+  text-align: center;
+  border: solid gray 2px;
+}

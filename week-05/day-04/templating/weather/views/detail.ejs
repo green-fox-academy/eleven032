@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+
+<body>
+    <div class="detailContainer">
+        <%city.weather.forEach(day=>{%>
+        <div class="detailBoard">
+            <h1><%=day.temp%>&#8451</h1>
+            <p><%=day.message%></p>
+        </div>
+        <%})%>
+    </div>
+</body>
+
+</html>

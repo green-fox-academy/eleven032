@@ -1,0 +1,17 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "---\r *A weather forecast app*\r ## What to do\r * Initialize a new nodejs project.\r * Install both __Express__ and __EJS__ dependencies.\r * Create a template files for dashboard and details views\r * Create a node web server to render templates",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  }
+}

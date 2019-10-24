@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+
+<body>
+    <div class=" boardContainer">
+        <%forecasts.forEach(area=>{%>
+        <div class="board">
+            <div>
+                <h1><a href="/?cityId=<%= area.city%>"><%=area.city%></a></h1>
+                <p><%=area.location%></p>
+            </div>
+            <div>
+                <h1><%=area.weather[0].temp%>&#8451</h1>
+            </div>
+        </div>
+        <%})%>
+    </div>
+    </body>
+
+</html>
