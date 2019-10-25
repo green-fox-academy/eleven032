@@ -1,0 +1,16 @@
+{
+  "name": "array-handler",
+  "version": "1.0.0",
+  "description": "- Create a `POST /arrays` endpoint\r - That receives a relatively complex json object:\r   ```json\r   {\r     \"what\": \"sum\",\r     \"numbers\": [1, 2, 5, 10]\r   }\r   ```\r - `what` can be 3 things: sum, multiply, double\r - and responds with sum or multiplication of all elements in the numbers or with\r   another array with the doubled elements:\r   - eg. `/arrays` with `{\"what\": \"sum\", \"numbers\": [1,2,5,10]}` will respond\r     `{\"result\": 18}`\r   - eg. `/arrays` with `{\"what\": \"multiply\", \"numbers\": [1,2,5,10]}` will\r     respond `{\"result\": 100}`\r   - eg. `/arrays` with `{\"what\": \"double\", \"numbers\": [1,2,5,10]}` will respond\r     `{\"result\": [2,4,10,20]}`\r - if no what (or numbers) is provided:\r   ```json\r   {\r     \"error\": \"Please provide what to do with the numbers!\"\r   }\r   ```",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
