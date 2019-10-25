@@ -36,16 +36,23 @@ function reverse(param) {
 
 }
 app.post('/sith', (req, res) => {
-    let list = req.body.text.split('.');
-    let result = new Array();
-    for (let i = 0; i < list.length; i++) {
-        result.push(reverse(list[i]));
+    if (req.body.text) {
+        let list = req.body.text.split('.');
+        let result = new Array();
+        for (let i = 0; i < list.length; i++) {
+            result.push(reverse(list[i]));
+        }
+        let string = result.join('');
+        console.log(string);
+        res.json({
+            sith_text: string
+        })
+    } else {
+        res.json({
+            error: "Feed me some text you have to, padawan young you are. Hmmm."
+        })
     }
-    let string = result.join('');
-    console.log(string);
-    res.json({
-        sith_text: string
-    })
+
 })
 
 
