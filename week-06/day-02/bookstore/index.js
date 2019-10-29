@@ -56,24 +56,6 @@ app.get('/', async (req, res) => {
     }
 });
 
-// app.get('/detail', async (req, res) => {
-//     let queryInput = req.query;
-//     let sqlString = `SELECT book_mast.book_name, author.aut_name, category.cate_descrip, publisher.pub_name, book_mast.book_price
-//     FROM book_mast,author,category,publisher WHERE book_mast.aut_id = author.aut_id and book_mast.cate_id= category.cate_id and book_mast.pub_id=publisher.pub_id`;
-
-
-//     try {
-//         let data = await promisedQuery(sqlString, queryInput);
-//         console.log(data);
-//         res.render('detail',
-//             {
-//                 data: data,
-//                 bookName: "Book Detail"
-//             });
-//     } catch (error) {
-//         res.status(500).send(error);
-//     }
-// });
 
 app.get('/detail', async (req, res) => {
     let queryInput = req.query;
