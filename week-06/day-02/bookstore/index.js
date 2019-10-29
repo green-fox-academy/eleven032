@@ -97,7 +97,6 @@ app.get('/detail', async (req, res) => {
 async function helper(queryInput, sqlString) {
     if (Object.keys(queryInput).length > 0) {
         for (let key in queryInput) {
-            console.log(`${key}=${queryInput[key]}`);
             if (key === 'category') {
                 sqlString += ` and category.cate_descrip='${queryInput[key]}'`;
             } else if (key === 'publisher') {
