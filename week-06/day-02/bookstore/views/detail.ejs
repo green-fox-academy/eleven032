@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1><%=bookName%></h1>
+    <table>
+        <tr>
+            <th>Book Name</th>
+            <th>Author Name</th>
+            <th>Category</th>
+            <th>Publisher</th>
+            <th>Price</th>
+        </tr>
+        <% for (var i = 0; i < data.length; i++) { %>
+        <tr>
+            <td><%= data[i].book_name %></td>
+            <td><%= data[i].aut_name %></td>
+            <td><%= data[i].cate_descrip %></td>
+            <td><%= data[i].book_price %></td>
+        </tr>
+        <% } %>
+    </table>
+</body>
+
+</html>
