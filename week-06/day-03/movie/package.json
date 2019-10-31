@@ -8,5 +8,8 @@
     "start": "node server.js"
   },
   "author": "Arthur",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
 }

@@ -1,4 +1,5 @@
-const port = 3000;
+require('dotenv').config();
+const PORT = process.env.PORT;
 const hostname = 'localhost';
 const server = require('./controller.js');
 
