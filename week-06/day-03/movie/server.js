@@ -1,10 +1,9 @@
 require('dotenv').config();
 const PORT = process.env.PORT;
-const hostname = 'localhost';
+const HOSTNAME = process.env.HOSTNAME;
 const server = require('./controller.js');
 
 
-
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(PORT, HOSTNAME, () => {
+    console.log(`Server running at http://${HOSTNAME}:${PORT}/`);
 });
