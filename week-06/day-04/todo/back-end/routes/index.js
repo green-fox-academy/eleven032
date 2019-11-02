@@ -34,7 +34,6 @@ router.get('/api/todos', async (req, res) => {
 
 router.post('/api/todos', async (req, res) => {
     let body = '';
-
     req.on('data', function (chunk) {
         body += chunk;
     });
@@ -70,6 +69,10 @@ router.delete('/api/todos/:id', async (req, res) => {
     let queryInput = [req.params.id];
     // console.log(await idCheck(queryInput[0]));
     if (await idCheck(queryInput[0])) {
+        let body = '';
+        req.on('data', function (chunk) {
+            body += chunk;
+        });
         let sqlString = `DELETE FROM todoList WHERE id = ?;`
         promisedQuery(sqlString, queryInput);
         res.statusCode = 200;
@@ -83,11 +86,38 @@ router.delete('/api/todos/:id', async (req, res) => {
 })
 
 router.put('/api/todos/:id', async (req, res) => {
-    let queryInput = [Number(req.params.id)];
-    let sqlString = `UPDATE todoList SET  WHERE id = ?;`;
-    promisedQuery(sqlString, queryInput);
-    // console.log(result);
-    res.statusCode = 200;
+    let id = req.params.id;
+    if (await idCheck(id)) {
+        let body = '';
+        req.on('data', function (chunk) {
+            body += chunk;
+        });
+
+        req.on('end', async function () {
+            let postBody = JSON.parse(body);
+            if (postBody.text === undefined) {
+                res.statusCode = 400;
+                res.setHeader('Content-Type', 'application/json');
+                res.end('Text missing!');
+            } else {
+                let queryInput = [
+                    postBody.text,
+                    postBody.done === 'true' ? true : false,
+                    id
+                ];
+                let sqlString = `UPDATE todoList SET text=?, done=? WHERE id = ?;`;
+                promisedQuery(sqlString, queryInput);
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'application/json');
+                res.end('Update successful');
+            }
+
+        })
+    } else {
+        res.statusCode = 404;
+        res.setHeader('Content-Type', 'application/json');
+        res.end('Id does not exist!');
+    }
 })
 
 async function idCheck(id) {
