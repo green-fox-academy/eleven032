@@ -23,8 +23,6 @@ router.get('/api/todos', async (req, res) => {
     let sqlString = `SELECT * FROM todoList`;
     try {
         let data = await promisedQuery(sqlString, queryInput);
-        console.log(data);
-
         let response = {
             "todo": data
         }
@@ -44,7 +42,7 @@ router.post('/api/todos', async (req, res) => {
     req.on('end', function () {
         postBody = JSON.parse(body);
         if (postBody.text === undefined) {
-            res.statusCode = 201;
+            res.statusCode = 400;
             res.setHeader('Content-Type', 'application/json');
             res.end('Text missing!');
         } else {
@@ -68,21 +66,40 @@ router.post('/api/todos', async (req, res) => {
     });
 })
 
-router.delete('/api/todos/:id', (req, res) => {
+router.delete('/api/todos/:id', async (req, res) => {
     let queryInput = [req.params.id];
-    let sqlString = `DELETE FROM todoList WHERE id = ?;`
-    promisedQuery(sqlString, queryInput);
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
-    res.end('Check now');
+    // console.log(await idCheck(queryInput[0]));
+    if (await idCheck(queryInput[0])) {
+        let sqlString = `DELETE FROM todoList WHERE id = ?;`
+        promisedQuery(sqlString, queryInput);
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.end('Deleted item');
+    } else {
+        res.statusCode = 404;
+        res.setHeader('Content-Type', 'application/json');
+        res.end('Id does not exist!');
+    }
 })
 
 router.put('/api/todos/:id', async (req, res) => {
     let queryInput = [Number(req.params.id)];
-    let sqlString = `UPDATE todoList SET  WHERE id = ?;`
+    let sqlString = `UPDATE todoList SET  WHERE id = ?;`;
     promisedQuery(sqlString, queryInput);
     // console.log(result);
     res.statusCode = 200;
 })
+
+async function idCheck(id) {
+    let queryInput = [id];
+    let sqlString = `select * from todoList where id = ?;`;
+    let data = await promisedQuery(sqlString, queryInput);
+    if (data.length == 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 
 module.exports = router;
