@@ -1,0 +1,21 @@
+{
+  "name": "reddit",
+  "version": "1.0.0",
+  "description": " a simple Reddit clone application",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arthur",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.4",
+    "react-router": "^5.1.2"
+  }
+}

@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const Todo = require('./Todo');
-const mysql = require('mysql');
 const connection = require('../public/db');
 
 let promisedQuery = (sqlString, queryInput) =>
