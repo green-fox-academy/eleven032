@@ -8,7 +8,6 @@ function counterReducer(state = 0, action) {
         case 'SET':
             return action.amount
 
-
         case 'INCREASE':
             return state + action.amount
 

@@ -45,9 +45,6 @@ const asyncIncreaseHelper = (num, sec) => {
     return (dispatch) => {
         setTimeout(function () { dispatch(asyncIncrease(num)); }, sec*1000);
     }
-
-
-
 }
 
 const asyncIncrease = (num) => {

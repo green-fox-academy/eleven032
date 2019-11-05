@@ -2,7 +2,7 @@
 const { promisedQuery, reqBodyChecker, idChecker, getNewPost, getItem } = require('../utilities/helperFunctions')
 // const getRequestBody = require('../utilities/getRequestBody')
 const express = require('express');
-const moment = require('moment');
+
 const router = express.Router();
 
 router.get('/', async (req, res) => {
