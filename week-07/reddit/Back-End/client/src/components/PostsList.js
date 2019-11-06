@@ -13,7 +13,7 @@ function PostsList(props) {
         <div className="container">
             <h1>Posts</h1>
             {props.posts.map((post) => 
-                 <Post key={post.id} id={post.id} title={post.title} timestamp={post.timestamp} score={post.score} />
+                 <Post key={"post-"+post.id} id={post.id} title={post.title} timestamp={post.timestamp} score={post.score} />
             )}
         </div>
     )

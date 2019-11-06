@@ -11,7 +11,7 @@ export default function dataReducer(state = { pending: false, posts: [], error: 
             return {
                 ...state,
                 pending: false,
-                posts: [...state.posts, ...action.posts]
+                posts: action.posts
             }
         case FETCH_POSTS_ERROR:
             return {
@@ -23,13 +23,19 @@ export default function dataReducer(state = { pending: false, posts: [], error: 
         case 'UPVOTE':
             return {
                 ...state,
-                posts: [...action.posts]
+                posts: action.posts
             };
         case 'DOWNVOTE':
             return {
                 ...state,
-                posts: [...action.posts]
+                posts: action.posts
             };
+
+        case 'SUBMIT':
+            return {
+                ...state,
+                posts: action.posts
+            }
         default:
             return state;
     }

@@ -23,4 +23,10 @@ const fetchPostsError = (error) => {
     }
 }
 
-export { fetchPostsPending, fetchPostsSuccess, fetchPostsError }
+const submitPostAction = (posts) => {
+    return {
+        type: 'SUBMIT',
+        posts: posts
+    }
+}
+export { fetchPostsPending, fetchPostsSuccess, fetchPostsError, submitPostAction }

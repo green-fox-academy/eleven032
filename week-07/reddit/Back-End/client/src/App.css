@@ -1,3 +1,11 @@
 .App {
   display: flex;
 }
+
+.main {
+  display: flex;
+}
+
+.side {
+  display: flex;
+}
