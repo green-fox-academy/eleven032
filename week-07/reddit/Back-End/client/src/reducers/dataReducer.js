@@ -1,12 +1,6 @@
 import { FETCH_POSTS_PENDING, FETCH_POSTS_SUCCESS, FETCH_POSTS_ERROR } from '../actions/dataActions';
 
-const initialState = {
-    pending: false,
-    posts: [],
-    error: null
-}
-
-export default function dataReducer(state = initialState, action) {
+export default function dataReducer(state = { pending: false, posts: [], error: null }, action) {
     switch (action.type) {
         case FETCH_POSTS_PENDING:
             return {
@@ -17,7 +11,7 @@ export default function dataReducer(state = initialState, action) {
             return {
                 ...state,
                 pending: false,
-                products: action.posts
+                posts: [...state.posts, ...action.posts]
             }
         case FETCH_POSTS_ERROR:
             return {
@@ -25,6 +19,17 @@ export default function dataReducer(state = initialState, action) {
                 pending: false,
                 error: action.error
             }
+
+        case 'UPVOTE':
+            return {
+                ...state,
+                posts: [...action.posts]
+            };
+        case 'DOWNVOTE':
+            return {
+                ...state,
+                posts: [...action.posts]
+            };
         default:
             return state;
     }

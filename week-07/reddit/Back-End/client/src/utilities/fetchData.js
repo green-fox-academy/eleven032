@@ -1,6 +1,6 @@
 import { fetchPostsPending, fetchPostsSuccess, fetchPostsError } from '../actions/dataActions';
 
-export default function fetchData() {
+const fetchData = () => {
     return dispatch => {
         dispatch(fetchPostsPending());
         fetch('http://localhost:3000/posts')
@@ -18,3 +18,4 @@ export default function fetchData() {
     }
 }
 
+export {fetchData}

@@ -1,10 +1,16 @@
 import React from 'react';
+import Header from './components/Header';
 import PostsList from './components/PostsList';
+import Side from './components/Side';
 
 function App() {
   return (
     <div className="App">
-      <PostsList />
+      <Header />
+      <main>
+        <PostsList />
+        <Side />
+      </main>
     </div>
   );
 }

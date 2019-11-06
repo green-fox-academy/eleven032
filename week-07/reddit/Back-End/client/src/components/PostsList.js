@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import fetchData from '../utilities/fetchData';
+import { fetchData } from '../utilities/fetchData';
+import Post from './Post';
+import './PostsList.css';
 
 function PostsList(props) {
-    const [posts, setPosts] = useState(props.posts);
-
     useEffect(() => {
-        setPosts(fetchData())
-    }, [])
+        fetchData()
+    },[])
+
     return (
         <div className="container">
             <h1>Posts</h1>
-            {posts.map((post, i) => {
-                return <h3 key={i}>{post}</h3>
-            })}
+            {props.posts.map((post) => 
+                 <Post key={post.id} id={post.id} title={post.title} timestamp={post.timestamp} score={post.score} />
+            )}
         </div>
     )
 }
-
 
 const mapStateToProps = (state) => {
     return {
@@ -25,9 +25,9 @@ const mapStateToProps = (state) => {
     }
 }
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         fetchData: dispatch(fetchData)
-//     }
-// }
-export default connect(mapStateToProps)(PostsList);
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchData: dispatch(fetchData())
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(PostsList);
