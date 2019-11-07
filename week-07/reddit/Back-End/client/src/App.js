@@ -9,22 +9,25 @@ import {
   Route
 } from 'react-router-dom';
 
-
+import './App.css';
 
 function App() {
   return (
     <div className="App">
+
       <Header />
+
+
       <Router>
         <Switch>
           <Route exact path='/'>
             <div className="main">
-              <PostsList />
+              <div className="postList"><PostsList /></div>
               <div className="side"><Side /></div>
             </div>
           </Route>
           <Route path='/submit'>
-              <NewPost />
+            <NewPost />
           </Route>
         </Switch>
       </Router>

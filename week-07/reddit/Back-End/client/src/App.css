@@ -1,11 +1,12 @@
-.App {
-  display: flex;
-}
-
 .main {
   display: flex;
 }
 
-.side {
-  display: flex;
+.postList {
+  width:700px;
 }
+
+.side {
+  flex-grow: 2;
+}
+

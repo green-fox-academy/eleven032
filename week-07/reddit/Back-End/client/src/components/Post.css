@@ -1,0 +1,12 @@
+.postContainer {
+  display: flex;
+  padding : 5%;
+}
+
+.postContainer .vote {
+  margin-left: 5px;
+}
+
+.postContainer .content {
+  padding-left: 10%;
+}

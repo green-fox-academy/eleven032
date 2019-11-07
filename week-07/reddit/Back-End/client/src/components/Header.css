@@ -1,7 +1,5 @@
 .header {
   background-image: url("https://images.unsplash.com/photo-1572480367523-f1ec40994eb0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=192&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1024");
-  display: flex;
-  border: solid red 1px;
-  height: 400px;
+  padding-bottom: 30%;
   background-size: 100% 100%;
 }
