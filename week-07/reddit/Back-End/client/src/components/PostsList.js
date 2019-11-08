@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchData } from '../utilities/fetchData';
 import Post from './Post';
-import './PostsList.css';
 
 function PostsList(props) {
     useEffect(() => {
