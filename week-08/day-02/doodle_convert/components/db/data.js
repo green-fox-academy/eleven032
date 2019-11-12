@@ -1,3 +1,2 @@
-export const data = ['Chinese', 'Japanese', 'Italian', 'Mexican', 'Somali'];
-
- 
+const data = ['Chinese', 'Japanese', 'Italian', 'Mexican', 'Somali'];
+exports.data = data;
