@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 const myModule = require('./db/data');
 
 function Hint(props) {
-    // console.log(props.value);
-    
     return (
         <View>
             <Text>{`Selected option: ${myModule.data[props.value]}`}</Text>
