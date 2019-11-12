@@ -5,9 +5,6 @@ import { connect } from 'react-redux';
 import RadioForm from 'react-native-simple-radio-button';
 
 function Options(props) {
-    console.log(props);
-
-
     let radio_props = [];
     let index = 0;
 
