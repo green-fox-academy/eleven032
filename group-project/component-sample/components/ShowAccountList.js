@@ -13,7 +13,6 @@ function ShowAccountList(props) {
     <View>
       <Text style={{ marginTop: 30 }}>Hello</Text>
       {props.accounts.map(function (account) {
-        {/* console.log(account.depositName); */ }
         return <Text key={account.id}>{account.depositName}</Text>
       })}
     </View>

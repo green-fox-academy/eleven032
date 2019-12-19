@@ -1,0 +1,76 @@
+https://xuyanxin.top/2019/03/29/AWS-Develop-Associate-%E8%80%83%E8%AF%95/
+IAM (Identity & Access Management):
+a.	作用是AWS资源的权限管理：
+1.	增强安全：AWS给每个用户单独的验证，保证每个用户能够被分配恰当的权限，从而保证AWS资源的安全。默认情况下，IAM的User在被创建的时候是没有任何权限的，所以IAM是默认安全的。
+2.	粒度控制：IAM让租户可以进行细粒度的权限控制，比如terminate instance的权限，比如对S3 bucket中对象的只读权限。
+3.	临时证书(AWS Security Token Service (AWS STS))：获得证书后与其他用户在权限上无区别，但有时间限制。临时安全凭证不随用户一起存储，而是动态生成并在用户提出请求时提供给用户。
+4.	灵活的安全证书管理：IAM提供了多种验证方式，包括key pair， 用户名密码，X.509 certificates， MFA，用于Console，CLI，sdk等API调用。
+5.	外部身份系统：IAM使AWS支持第三方登录或与企业现有权限管理系统集成，比如微软的Active Directory，或第三方验证，比如Google，Facebook。
+6.	与AWS服务无缝贴合：IAM与AWS的几乎所有服务集成，首先你需要IAM的权限再能访问和使用AWS的服务，其次AWS中的服务需要IAM的权限才能完成对AWS其他资源的调用。
+b.	名词解释：
+1.	User：一个User对应一个AWS用户，这个用户指的是一个真实的用户，用户在创建初期是没有任何权限的，需要被加到用户组或绑定Policy才能有相应权限，User有两种验证方式，一种是key pair，常用于集成到程序中和AWS CLI 使用，另一种是Username+Password的方式，这种方式只能用于Console登录。
+2.	UserGroup：类比Linux系统的UserGroup，一个UserGroup可以包含多个User，这些User具有UserGroup指定的所有权限，UserGroup的权限由Policy制定，Group不能嵌套Group，一个用户如在多个UserGroup中，权限取Group权限的和。
+3.	Policy：由“资源类型”和“操作类型”两个重要参数构成的Json文件，用于定义一定粒度的权限，支持模糊匹配（*），分为官方定义和自己定义，用于定义用户可对何种资源执行何种操作，Policy可以与User，UserGroup，Role绑定。
+4.	Role：IAM定义用于代替User赋予资源权限的权限单位，比如给一个EC2 instance S3 administrator的权限，便可以在改Instance上执行AWS s3的所有命令，且在本地不会出现Creadentical文件（比User安全）。与User相同，Role 的权限也由Policy组成，由用户定义。另外，Role还可以用于赋予外部账号权限。角色（roles）类似于用户，但没有任何访问凭证（密码或者密钥），它一般被赋予某个资源（包括用户），使其临时具备某些权限。可以不是人而是服务。
+c.	Cognito
+1.	用户池：可以让网站，手机及各类用户使用此功能进行注册登录。用户池用于身份验证（识别验证）。如果使用用户池，应用程序用户可以通过用户池进行登录或通过第三方身份提供方 (IdP) 进行联合。
+2.	身份池：在用户池中选择并给予权限从而可以对一些AWS服务进行操作
+3.	身份提供商：如果您已管理 AWS 外部的用户身份，则可以使用 IAM 身份提供商 而不必在 AWS 账户中创建 IAM 用户。利用身份提供商 (IdP)，您可以管理 AWS 外部的用户身份，并向这些外部用户身份授予使用您账户中的 AWS 资源的权限。
+4.	Identity Federation：通过第三方帐号进行验证并给予相应权限。这些帐号可能并非本公司的，但可以给予权限的。
+5.	 Web Identity Federation： 针对网页，情况与上述类似
+S3：
+a.	Store files online 
+b.	Amazon DynamoDB是一种完全托管的NoSQL数据库服务
+i.	可扩展：Amazon DynamoDB旨在实现吞吐量和存储容量的高效无缝扩展
+1.	预配置吞吐量：创建表时，只须指定所需的吞吐容量即可。Amazon DynamoDB会为您的表分配专用资源以满足性能要求，并自动将数据分区到足够多的服务器以满足请求容量。如果您的应用程序需求发生变化，只须使用AWS管理控制台或Amazon DynamoDB API调用更新表的吞吐容量即可。在扩展过程中，仍然能够保证之前的吞吐量水平没有下降。
+2.	自动存储扩展：Amazon DynamoDB表中可存储的数据量没有限制，而且随着您使用Amazon DynamoDB写入API所存储数据量的增加，该服务会自动分配更多存储。
+3.	完全分布式的无共享架构：Amazon DynamoDB可水平扩展并在数百台服务器中无缝扩展单个表。
+ii.	快速、可预测的性能：Amazon DynamoDB的服务端平均延迟不超过10毫秒。该服务在固态硬盘中运行，其构建方式旨在任何规模均能保证服务性能持续优良，降低延迟。
+iii.	轻松管理：Amazon DynamoDB是完全托管的服务，您只须创建数据库表，其余事情都交由该服务代劳。您无须担心硬件或软件预配置、设置和配置、软件修补、操作可靠的分布式数据库集群，也不必担心随着扩展的需要在多个实例间对数据进行分区等问题。
+iv.	内置容错能力：Amazon DynamoDB内置容错能力，可在某个地区多个可用区域之间自动同步备份数据，以实现高效的可访问性，即使单台机器甚至设施出现死机，防护措施可保证数据万无一失。
+v.	灵活：Amazon DynamoDB没有固定模式。相反，每个数据项目可以有不同数量的属性。多种数据类型（字符串、数字、二进制数据和集）使数据模型更加丰富。
+vi.	高效的索引：Amazon DynamoDB表中的每个项目均由一个主键标识，让您能够快速高效地访问数据项目。还可以就非键值属性定义二级索引，并使用替代键查询您的数据。
+vii.	强一致性、原子计数器：与许多非关系数据库不同，Amazon DynamoDB允许您对读取操作使用强一致性检验以确保始终读取最新的值，从而使开发更加便捷。Amazon DynamoDB支持多种本地数据类型（数字、字符串、二进制数据和多值属性）。该服务还支持本地原子计数器，允许您通过调用单个API调用自动递增或递减数字属性。
+viii.	安全：Amazon DynamoDB非常安全，采用经过验证的加密方法验证用户身份，以防未授权数据访问。此外，它还与AWS Identity and Access Management集成，为组织内的用户实现精细的访问控制。
+ix.	集成监控：Amazon DynamoDB在AWS管理控制台中为您的表显示关键操作指标。该服务还与CloudWatch集成，以便您查看每个Amazon DynamoDB表的请求吞吐量和延迟，并轻松跟踪您的资源使用情况。
+x.	Amazon Elastic MapReduce集成：Amazon DynamoDB还与Amazon Elastic MapReduce（Amazon EMR）集成。Amazon EMR允许企业使用AWS服务中托管的即用即付计费Hadoop框架对大型数据集执行复杂分析。依赖Amazon DynamoDB的强大服务能力，客户可轻松使用Amazon EMR分析Amazon DynamoDB中存储的数据集，并在Amazon S3中存档结果，同时在Amazon DynamoDB中保存完整原始数据集。
+c.	Lambda
+i.	一个类似中间件的玩意儿
+d.	SQS
+i.	消息队列: send store receive messages
+ 
+介于应用与各部件之间的信息数据传递系统，上图系统A产生数据但并不负责传递给任何有需要的系统，而是分配到消息队列。其他系统从中选择。
+ii.	自动进行加密，安全性可靠
+iii.	先进先出
+e.	SNS：
+i.	设置notification,将消息推到消息队列
+f.	Lambda,sqs,sns：用trigger进行连接
+Elastic Beanstalk:
+全方位负责将你的代码应用上传，同时进行相对应配置
+Elastic cache：
+Elasticache 通过在内存中缓存信息，来减轻应用程序访问数据库的负担。它目前支持两种 caching engines:
+Memcached
+Redis
+
+Amazon CloudWatch — 监控服务
+Aws部署方面
+https://www.bespinglobal.cn/aws-devops-09/
+AWS CodeCommit：
+是由 Amazon Web Services 托管的版本控制服务，可让您在云中私下存储和管理资产
+可以使用 CodeCommit 存储从代码到二进制文件的一切内容
+
+AWS CodeBuild：
+AWS CodeBuild是一个完全托管的构建服务，可以编译源代码，运行单元测试，并生产部署就绪的工作。
+其输入是源代码存放位置，源码可支持S3, Github, Bitbucket, Github Enterprise。
+中间过程是无服务器的构建的环境，支持的构建环境有Amazon Linux 2, Ubuntu, Docker， 这些环境所启动的资源对用户均是不可见的，面向用户即是Serverless, 因此用户便免于管理构建服务器等环境。
+如何操作实际构建的命令呢？则是通过AWS所规定的一个文件 buildspec.yml，按照AWS规范的格式将构建的命令编写入buildspec.yml文件中，将该文件放入到源代码根路径下，AWS底层在进行构建时，拉取源代码后会自动寻找该文件，执行该文件定义的方式进行构建。
+输出是构建后的文件，可以存储在S3上，如果是Docker, 也也可以将映像推送到ECR中。
+CodeDeploy：
+AWS CodeDeploy是一项部署服务， 在代码打包完成之后，将代码传到服务器上，重启应用程序以让新的代码提供服务的过程。
+CodeDeploy 不仅仅能够支持AWS EC2的虚拟机上应用程序的部署，也支持AWS Lambda和本地实例的部署。
+在应用程序服务器上，需要安装运行CodeDeploy Agent，我们将部署的方式，比如从何处拉取代码，拉取后的代码需要放置的路径，然后如何重启应用程序，如何验证部署后的测试等，这些部署方式按照AWS的规则，写入到指定文件appspec.yml中，该文件放置在源码的根路径下， Agent会自动读取该文件，执行部署的规则。
+同时，CodeDeploy本身可以与AutoScaling, ELB 集成，实现滚动或者蓝绿发布。
+Ec2: https://blog.csdn.net/yangss123/article/details/70174933
+
+
+
